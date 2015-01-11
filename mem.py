@@ -4,6 +4,7 @@
 
 from psutil import virtual_memory
 
+
 def memory():
     mem = virtual_memory()
     print(mem.total)

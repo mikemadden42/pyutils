@@ -3,6 +3,7 @@
 import os
 import socket
 
+
 def lookup():
     with open('hosts.txt', 'r') as f:
         for host in f:

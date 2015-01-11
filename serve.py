@@ -3,14 +3,14 @@
 # Based on https://github.com/Nakiami/MultithreadedSimpleHTTPServer
 # Updated for Python 3
 
-import socketserver
 import http.server
+import os
+import socketserver
+import sys
+
 
 class ThreadingSimpleServer(socketserver.ThreadingMixIn, http.server.HTTPServer):
     pass
-
-import sys
-import os
 
 if sys.argv[1:]:
     port = int(sys.argv[1])

@@ -2,8 +2,9 @@
 
 from collections import OrderedDict
 
+
 def dict_test():
-    d = {'banana': 3, 'apple':4, 'pear': 1, 'orange': 2}
+    d = {'banana': 3, 'apple': 4, 'pear': 1, 'orange': 2}
     print(d)
 
     # dictionary sorted by key

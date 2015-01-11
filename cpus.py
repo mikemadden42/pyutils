@@ -4,6 +4,7 @@
 
 import multiprocessing
 
+
 def cpus():
     print('CPUs: %d' % (multiprocessing.cpu_count()))
 
