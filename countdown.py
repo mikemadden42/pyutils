@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.4
+#!/usr/bin/env python
 
 # http://stackoverflow.com/questions/8419564/difference-between-two-dates
 

@@ -1,16 +1,26 @@
-#!/usr/bin/env python3.4
+#!/usr/bin/env python
 
 # Based on https://github.com/Nakiami/MultithreadedSimpleHTTPServer
-# Updated for Python 3
+# Works for both Python 2 & Python 3
 
-import http.server
+try:
+    import SocketServer
+except ImportError:
+    import socketserver
+try:
+    import BaseHTTPServer
+    import SimpleHTTPServer
+except ImportError:
+    import http.server
 import os
-import socketserver
 import sys
 
-
-class ThreadingSimpleServer(socketserver.ThreadingMixIn, http.server.HTTPServer):
-    pass
+try:
+    class ThreadingSimpleServer(socketserver.ThreadingMixIn, http.server.HTTPServer):
+        pass
+except NameError:
+    class ThreadingSimpleServer(SocketServer.ThreadingMixIn, BaseHTTPServer.HTTPServer):
+        pass
 
 if sys.argv[1:]:
     port = int(sys.argv[1])
@@ -20,7 +30,11 @@ else:
 if sys.argv[2:]:
     os.chdir(sys.argv[2])
 
-server = ThreadingSimpleServer(('', port), http.server.SimpleHTTPRequestHandler)
+try:
+    server = ThreadingSimpleServer(('', port), http.server.SimpleHTTPRequestHandler)
+except NameError:
+    server = ThreadingSimpleServer(('', port), SimpleHTTPServer.SimpleHTTPRequestHandler)
+
 try:
     while 1:
         sys.stdout.flush()

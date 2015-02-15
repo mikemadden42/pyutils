@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.4
+#!/usr/bin/env python
 
 # http://stackoverflow.com/questions/1006289/how-to-find-out-the-number-of-cpus-using-python
 
