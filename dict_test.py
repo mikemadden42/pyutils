@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 
-from collections import OrderedDict
+import sys
+
+try:
+    from collections import OrderedDict
+except ImportError:
+    print('python 2.7.x needed')
+    sys.exit(1)
 
 
 def dict_test():
