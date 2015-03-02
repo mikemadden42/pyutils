@@ -9,7 +9,12 @@ def check():
         for url in f:
             url = url.rstrip(os.linesep)
 
-            r = requests.get(url)
+            try:
+                r = requests.get(url)
+            except Exception, e:
+                print(url, e)
+                continue
+
             if (r.status_code != requests.codes.ok) or (len(r.content) == 0):
                 print(url)
 
