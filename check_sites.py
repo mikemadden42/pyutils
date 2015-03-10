@@ -17,10 +17,9 @@ def get(url):
         #     data = f.read()
         #     print 'bytes read:', len(data)
         #     print
-    except Exception, e:
-        print url
-        print e
-        print
+    except Exception as e:
+        print(url)
+        print(e)
 
 
 def check():

@@ -11,7 +11,7 @@ def check():
 
             try:
                 r = requests.get(url)
-            except Exception, e:
+            except Exception as e:
                 print(url, e)
                 continue
 
