@@ -4,12 +4,18 @@
 
 import multiprocessing
 import os
-import urllib2
+try:
+    import urllib2
+except ImportError as e:
+    import urllib.request
 
 
 def get(url):
     try:
-        f = urllib2.urlopen(url)
+        try:
+            f = urllib2.urlopen(url)
+        except NameError as e:
+            f = urllib.request.urlopen(url)
         # if f.msg == 'OK':
         #     print 'url:', f.url
         #     print 'code:', f.code
