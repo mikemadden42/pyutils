@@ -9,16 +9,16 @@ def dc():
 
     try:
         ip = socket.gethostbyname(host)
-    except socket.error, msg:
-        print host, msg
+    except socket.error as msg:
+        print(host, msg)
         sys.exit(1)
 
     if ip.startswith('65'):
-        print 'ETC'
+        print('ETC')
     elif ip.startswith('12'):
-        print 'PTC'
+        print('PTC')
     else:
-        print 'UNKNOWN'
+        print('UNKNOWN')
 
 
 if __name__ == '__main__':
