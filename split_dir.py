@@ -6,14 +6,13 @@
 
 import os
 import shutil
-import sys
 
 
 def split_dir(d):
     files = os.listdir(d)
     size = len(files)
 
-    batches = size / 100
+    batches = int(size / 100)
     i = 0
 
     while i <= batches:

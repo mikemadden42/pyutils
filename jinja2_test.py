@@ -4,7 +4,6 @@
 
 import jinja2
 import os
-import sys
 
 templateLoader = jinja2.FileSystemLoader(searchpath="/")
 templateEnv = jinja2.Environment(loader=templateLoader)
