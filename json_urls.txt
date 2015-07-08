@@ -1,0 +1,3 @@
+http://api.vevo.com/mobile/v1/video/list.json
+https://nma-xqa1.nationalcar.com/content/national/data/country/US.json
+https://nma-prdsup.nationalcar.com/content/national/data/country/US.json
