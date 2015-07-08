@@ -1,25 +1,32 @@
 #!/usr/bin/env python
 
+"""
+Get the location of a data center based on ip address.
+ETC ip addresses start with a 65.
+PTC ip addresses start with a 12.
+"""
+
 import socket
 import sys
 
 
-def dc():
+def location():
+    """Get the location of a data center based on ip address."""
     host = 'www.alamo.ca'
 
     try:
-        ip = socket.gethostbyname(host)
+        ip_address = socket.gethostbyname(host)
     except socket.error as msg:
         print(host, msg)
         sys.exit(1)
 
-    if ip.startswith('65'):
+    if ip_address.startswith('65'):
         print('ETC')
-    elif ip.startswith('12'):
+    elif ip_address.startswith('12'):
         print('PTC')
     else:
         print('UNKNOWN')
 
 
 if __name__ == '__main__':
-    dc()
+    location()
