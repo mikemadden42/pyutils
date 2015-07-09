@@ -14,6 +14,7 @@
 # ps -o nlwp $(pgrep python)
 
 import requests
+import six
 from multiprocessing.dummy import Pool as ThreadPool
 from multiprocessing import cpu_count
 
@@ -23,7 +24,7 @@ def get(url):
     try:
         return requests.get(url)
     except Exception as error:
-        print(url, error)
+        six.print_(url, error)
 
 
 def check():
@@ -37,9 +38,9 @@ def check():
     for result in results:
         if result is not None:
             if result.status_code != requests.codes.ok:
-                print('Invalid status code', result.url)
+                six.print_('Invalid status code', result.url)
             if len(result.content) == 0:
-                print('Invalid content length', result.url)
+                six.print_('Invalid content length', result.url)
 
     pool.close()
     pool.join()

@@ -4,6 +4,7 @@
 
 # http://stackoverflow.com/questions/8419564/difference-between-two-dates
 
+import six
 from datetime import date
 
 
@@ -16,4 +17,4 @@ if __name__ == '__main__':
     START_DATE = date(2013, 1, 1)
     END_DATE = date(2013, 9, 13)
     RESULT1 = diff_dates(END_DATE, START_DATE)
-    print(RESULT1)
+    six.print_(RESULT1)

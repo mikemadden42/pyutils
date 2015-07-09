@@ -11,6 +11,7 @@ from six.moves import socketserver
 
 import os
 import sys
+import six
 
 class ThreadingSimpleServer(socketserver.ThreadingMixIn,
         BaseHTTPServer.HTTPServer):
@@ -33,4 +34,4 @@ try:
         sys.stdout.flush()
         SERVER.handle_request()
 except KeyboardInterrupt:
-    print("Finished")
+    six.print_("Finished")

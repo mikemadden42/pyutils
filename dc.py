@@ -6,6 +6,7 @@ ETC ip addresses start with a 65.
 PTC ip addresses start with a 12.
 """
 
+import six
 import socket
 import sys
 
@@ -17,15 +18,15 @@ def location():
     try:
         ip_address = socket.gethostbyname(host)
     except socket.error as msg:
-        print(host, msg)
+        six.print_(host, msg)
         sys.exit(1)
 
     if ip_address.startswith('65'):
-        print('ETC')
+        six.print_('ETC')
     elif ip_address.startswith('12'):
-        print('PTC')
+        six.print_('PTC')
     else:
-        print('UNKNOWN')
+        six.print_('UNKNOWN')
 
 
 if __name__ == '__main__':

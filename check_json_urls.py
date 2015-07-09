@@ -4,6 +4,7 @@
 
 import os
 import requests
+import six
 
 
 def check_urls():
@@ -13,9 +14,9 @@ def check_urls():
             url = url.rstrip(os.linesep)
             try:
                 data = requests.get(url)
-                print(data.json())
+                six.print_(data.json())
             except ValueError as msg:
-                print(('FAIL:', url, data.status_code, msg))
+                six.print_(('FAIL:', url, data.status_code, msg))
 
 if __name__ == '__main__':
     check_urls()
