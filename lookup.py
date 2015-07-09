@@ -27,7 +27,7 @@ def lookup():
 
     for result in results:
         if result is not None:
-            print(result)
+            six.print_(result)
 
     pool.close()
     pool.join()
