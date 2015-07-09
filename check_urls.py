@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+"""Get the status of a set of urls."""
+
 # http://chriskiehl.com/article/parallelism-in-one-line
 # https://docs.python.org/2/library/multiprocessing.html
 # http://stackoverflow.com/questions/26432411/multiprocessing-dummy-in-python
@@ -17,23 +19,27 @@ from multiprocessing import cpu_count
 
 
 def get(url):
+    """Get the status of a given url."""
     try:
         return requests.get(url)
-    except Exception as e:
-        print(url, e)
+    except Exception as error:
+        print(url, error)
 
 
 def check():
-    f = open('urls.txt', 'r')
-    urls = [x.strip() for x in f.readlines()]
+    """Get the status of a set of urls."""
+    infile = open('urls.txt', 'r')
+    urls = [x.strip() for x in infile.readlines()]
 
     pool = ThreadPool(cpu_count() * 4)
     results = pool.map(get, urls)
 
-    for r in results:
-        if r is not None:
-            if (r.status_code != requests.codes.ok) or (len(r.content) == 0):
-                print(r.url)
+    for result in results:
+        if result is not None:
+            if result.status_code != requests.codes.ok:
+                print('Invalid status code', result.url)
+            if len(result.content) == 0:
+                print('Invalid content length', result.url)
 
     pool.close()
     pool.join()
