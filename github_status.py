@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 
+"""Get the status of github"""
+
 import requests
 import six
 
 
 def github_status():
+    """Get the status of github"""
     url = "https://status.github.com/api/messages.json"
     response = requests.get(url)
     data = response.json()

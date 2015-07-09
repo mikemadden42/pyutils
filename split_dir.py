@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+"""Split a large directory into smaller directories"""
+
 # http://stackoverflow.com/questions/12497901/i-need-python-to-process-all-files-in-a-directory-but-it-only-gets-one
 # http://www.pythoncentral.io/how-to-slice-listsarrays-and-tuples-in-python/
 # https://docs.python.org/2/library/shutil.html
@@ -8,21 +10,22 @@ import os
 import shutil
 
 
-def split_dir(d):
-    files = os.listdir(d)
+def split_dir(directory):
+    """Split a large directory into smaller directories"""
+    files = os.listdir(directory)
     size = len(files)
 
     batches = int(size / 100)
     i = 0
 
     while i <= batches:
-        os.mkdir(d + '/' + str(i))
+        os.mkdir(directory + '/' + str(i))
         start = i * 100
         end = (i * 100) + 100
         part = files[start:end]
 
-        for f in part:
-            shutil.move(d + '/' + f, d + '/' + str(i))
+        for part_file in part:
+            shutil.move(directory + '/' + part_file, directory + '/' + str(i))
 
         i += 1
 
