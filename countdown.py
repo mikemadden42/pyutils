@@ -14,7 +14,7 @@ def diff_dates(date1, date2):
 
 
 if __name__ == '__main__':
-    START_DATE = date(2013, 1, 1)
-    END_DATE = date(2013, 9, 13)
+    START_DATE = date(2015, 8, 19)
+    END_DATE = date(2015, 10, 15)
     RESULT1 = diff_dates(END_DATE, START_DATE)
     six.print_(RESULT1)
