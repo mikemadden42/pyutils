@@ -7,6 +7,7 @@
 import six
 import datetime
 
+
 def diff_dates(date1, date2):
     """Get the difference between two dates"""
     return abs(date2 - date1).days
