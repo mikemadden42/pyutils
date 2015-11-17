@@ -5,8 +5,7 @@
 # http://stackoverflow.com/questions/8419564/difference-between-two-dates
 
 import six
-from datetime import date
-
+import datetime
 
 def diff_dates(date1, date2):
     """Get the difference between two dates"""
@@ -14,7 +13,8 @@ def diff_dates(date1, date2):
 
 
 if __name__ == '__main__':
-    START_DATE = date(2015, 8, 19)
-    END_DATE = date(2015, 10, 15)
+    START_DATE = datetime.date(2015, 8, 19)
+    NOW = datetime.datetime.now()
+    END_DATE = datetime.date(NOW.year, NOW.month, NOW.day)
     RESULT1 = diff_dates(END_DATE, START_DATE)
     six.print_(RESULT1)
