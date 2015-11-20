@@ -11,8 +11,13 @@ import six
 # http://stackoverflow.com/questions/12400256/python-converting-epoch-time-into-the-datetime
 def boot():
     """Get the boot time"""
-    boot_time = psutil.boot_time()
-    time_stamp = datetime.datetime.fromtimestamp(boot_time).strftime('%Y-%m-%d %H:%M:%S')
+    try:
+        boot_time = psutil.boot_time()
+    except AttributeError:
+        boot_time = psutil.get_boot_time()
+
+    time_stamp = \
+        datetime.datetime.fromtimestamp(boot_time).strftime('%Y-%m-%d %H:%M:%S')
     six.print_('Boot time: %s' % (time_stamp))
 
 
@@ -20,8 +25,11 @@ def boot():
 def cpus():
     """Get the number of cpus"""
     six.print_('Total CPUs: %d' % (multiprocessing.cpu_count()))
-    six.print_('Physical CPUs: %d' % (psutil.cpu_count(logical=False)))
-    six.print_('Logical CPUs: %d' % (psutil.cpu_count()))
+    try:
+        six.print_('Physical CPUs: %d' % (psutil.cpu_count(logical=False)))
+        six.print_('Logical CPUs: %d' % (psutil.cpu_count()))
+    except AttributeError:
+        pass
 
 
 # http://stackoverflow.com/questions/22102999/get-total-physical-memory-from-python
