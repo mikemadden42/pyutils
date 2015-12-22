@@ -10,7 +10,7 @@ import yaml
 # http://martin-thoma.com/configuration-files-in-python/
 def read_yaml():
     """Read & print YAML."""
-    with open("config.yml", 'r') as ymlfile:
+    with open('config.yml', 'r') as ymlfile:
         cfg = yaml.load(ymlfile)
 
         for section in cfg:
