@@ -2,6 +2,7 @@
 
 # https://pymotw.com/2/optparse/
 # http://www.alexonlinux.com/pythons-optparse-for-human-beings
+# http://superuser.com/questions/501427/gracefully-deleting-files-older-than-30-days
 
 """
 Wrap up tmpwatch to clean up a given directory.
@@ -17,8 +18,10 @@ def clean(directory, test_mode):
 
     if test_mode:
         print 'Running in test mode on %s...' % directory
+        print 'tmpwatch -m -t 60d %s' % (directory)
     else:
         print 'Running in execute mode on %s...' % directory
+        print 'tmpwatch -m 60d %s' % (directory)
 
 
 if __name__ == '__main__':
