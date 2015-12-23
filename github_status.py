@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 """Get the status of github"""
 
 import requests
@@ -15,8 +14,7 @@ def github_status():
 
     for message in data:
         try:
-            six.print_(message['created_on'], message['status'],
-                       sep=' - ')
+            six.print_(message['created_on'], message['status'], sep=' - ')
             six.print_(message['body'], end='''
 
 ''')

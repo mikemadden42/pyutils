@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 """Test various dictionary sorts"""
 
 import six
@@ -15,12 +14,7 @@ except ImportError:
 def dict_test():
     """Test various dictionary sorts"""
 
-    fruit = {
-        'banana': 3,
-        'apple': 4,
-        'pear': 1,
-        'orange': 2,
-        }
+    fruit = {'banana': 3, 'apple': 4, 'pear': 1, 'orange': 2, }
     six.print_(fruit)
 
     # dictionary sorted by key

@@ -3,7 +3,6 @@
 # https://pymotw.com/2/optparse/
 # http://www.alexonlinux.com/pythons-optparse-for-human-beings
 # http://superuser.com/questions/501427/gracefully-deleting-files-older-than-30-days
-
 """
 Wrap up tmpwatch to clean up a given directory.
 """
@@ -28,7 +27,10 @@ def clean(directory, test_mode):
 if __name__ == '__main__':
     parser = optparse.OptionParser()
     parser.add_option('-d', '--directory', dest='directory')
-    parser.add_option('-t', '--test', dest='test', default=False,
+    parser.add_option('-t',
+                      '--test',
+                      dest='test',
+                      default=False,
                       action='store_true')
 
     (options, args) = parser.parse_args()
