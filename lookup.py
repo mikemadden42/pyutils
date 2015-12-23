@@ -14,7 +14,7 @@ def find(host):
     try:
         ip_address = socket.gethostbyname(host)
         return (host, ip_address)
-    except socket.error, msg:
+    except socket.error as msg:
         six.print_(host, msg)
 
 

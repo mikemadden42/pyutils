@@ -5,6 +5,7 @@ Demo script for reading YAML.
 """
 
 import yaml
+import six
 
 
 # http://martin-thoma.com/configuration-files-in-python/
@@ -16,9 +17,9 @@ def read_yaml():
         cfg = yaml.load(ymlfile)
 
         for section in cfg:
-            print section
-            print cfg['mysql']
-            print cfg['other']
+            six.print_(section)
+            six.print_(cfg['mysql'])
+            six.print_(cfg['other'])
 
 
 if __name__ == '__main__':

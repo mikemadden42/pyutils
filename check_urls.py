@@ -24,7 +24,7 @@ def get(url):
 
     try:
         return requests.get(url)
-    except Exception, error:
+    except Exception as error:
         six.print_(url, error)
 
 

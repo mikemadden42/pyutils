@@ -10,6 +10,7 @@ Wrap up tmpwatch to clean up a given directory.
 
 import optparse
 import os
+import six
 import sys
 
 
@@ -17,11 +18,11 @@ def clean(directory, test_mode):
     """Clean up a given directory."""
 
     if test_mode:
-        print 'Running in test mode on %s...' % directory
-        print 'tmpwatch -m -t 60d %s' % directory
+        six.print_('Running in test mode on %s...' % directory)
+        six.print_('tmpwatch -m -t 60d %s' % directory)
     else:
-        print 'Running in execute mode on %s...' % directory
-        print 'tmpwatch -m 60d %s' % directory
+        six.print_('Running in execute mode on %s...' % directory)
+        six.print_('tmpwatch -m 60d %s' % directory)
 
 
 if __name__ == '__main__':

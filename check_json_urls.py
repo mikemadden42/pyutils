@@ -16,7 +16,7 @@ def check_urls():
             try:
                 data = requests.get(url)
                 six.print_(data.json())
-            except ValueError, msg:
+            except ValueError as msg:
                 six.print_(('FAIL:', url, data.status_code, msg))
 
 

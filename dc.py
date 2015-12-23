@@ -18,7 +18,7 @@ def location():
 
     try:
         ip_address = socket.gethostbyname(host)
-    except socket.error, msg:
+    except socket.error as msg:
         six.print_(host, msg)
         sys.exit(1)
 

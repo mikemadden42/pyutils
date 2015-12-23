@@ -3,6 +3,7 @@
 """Find broken links in a directory"""
 
 import os
+import six
 
 
 def check_links(directory):
@@ -12,7 +13,7 @@ def check_links(directory):
     for filename in files:
         full_path = os.path.join(directory, filename)
         if not os.path.exists(full_path):
-            print full_path
+            six.print_(full_path)
 
 
 if __name__ == '__main__':
