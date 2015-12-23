@@ -4,8 +4,8 @@
 
 """jinja2 demo script"""
 
-import jinja2
 import os
+import jinja2
 
 TEMPLATE_LOADER = jinja2.FileSystemLoader(searchpath='/')
 TEMPLATE_ENV = jinja2.Environment(loader=TEMPLATE_LOADER)

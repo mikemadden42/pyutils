@@ -4,8 +4,8 @@
 
 """Get the difference between two dates"""
 
-import six
 import datetime
+import six
 
 
 def diff_dates(date1, date2):

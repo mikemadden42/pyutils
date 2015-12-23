@@ -8,8 +8,8 @@ Get the stats (ips, urls, agents) for an Apache access log.
 """
 
 import os
-import six
 import sys
+import six
 
 try:
     from collections import OrderedDict

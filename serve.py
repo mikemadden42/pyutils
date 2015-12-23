@@ -4,13 +4,13 @@
 # Works for both Python 2.x & Python 3.x
 """Simple HTTP server"""
 
-from six.moves import BaseHTTPServer
-from six.moves import SimpleHTTPServer
-from six.moves import socketserver
-
 import os
 import sys
 import six
+
+from six.moves import BaseHTTPServer
+from six.moves import SimpleHTTPServer
+from six.moves import socketserver
 
 
 class ThreadingSimpleServer(socketserver.ThreadingMixIn,

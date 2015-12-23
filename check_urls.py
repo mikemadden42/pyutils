@@ -13,10 +13,10 @@
 
 """Get the status of a set of urls."""
 
-import requests
-import six
 from multiprocessing.dummy import Pool as ThreadPool
 from multiprocessing import cpu_count
+import requests
+import six
 
 
 def get(url):

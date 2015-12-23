@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 """Test various dictionary sorts"""
 
-import six
 import sys
+import six
 
 try:
     from collections import OrderedDict

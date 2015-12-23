@@ -6,9 +6,9 @@ ETC ip addresses start with a 65.
 PTC ip addresses start with a 12.
 """
 
-import six
 import socket
 import sys
+import six
 
 
 def location():

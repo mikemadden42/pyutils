@@ -9,8 +9,8 @@ Wrap up tmpwatch to clean up a given directory.
 
 import optparse
 import os
-import six
 import sys
+import six
 
 
 def clean(directory, test_mode):
