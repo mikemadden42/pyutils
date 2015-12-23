@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 
-"""Get the status of a set of urls."""
-
 # http://chriskiehl.com/article/parallelism-in-one-line
 # https://docs.python.org/2/library/multiprocessing.html
 # http://stackoverflow.com/questions/26432411/multiprocessing-dummy-in-python
@@ -13,6 +11,8 @@
 # Find the number of threads for a python process:
 # ps -o nlwp $(pgrep python)
 
+"""Get the status of a set of urls."""
+
 import requests
 import six
 from multiprocessing.dummy import Pool as ThreadPool
@@ -21,14 +21,16 @@ from multiprocessing import cpu_count
 
 def get(url):
     """Get the status of a given url."""
+
     try:
         return requests.get(url)
-    except Exception as error:
+    except Exception, error:
         six.print_(url, error)
 
 
 def check():
     """Get the status of a set of urls."""
+
     infile = open('urls.txt', 'r')
     urls = [x.strip() for x in infile.readlines()]
 

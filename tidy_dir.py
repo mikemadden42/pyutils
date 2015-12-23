@@ -12,6 +12,7 @@ import shutil
 
 def tidy_dir(directory):
     """Organizes a large directory with many files."""
+
     dir_list = os.listdir(directory)
     os.chdir(directory)
 
@@ -20,6 +21,7 @@ def tidy_dir(directory):
         if not os.path.isdir(first_letter):
             os.mkdir(first_letter)
         shutil.move(filename, first_letter)
+
 
 if __name__ == '__main__':
     tidy_dir('dvds')

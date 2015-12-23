@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
-"""Get the difference between two dates"""
-
 # http://stackoverflow.com/questions/8419564/difference-between-two-dates
+
+"""Get the difference between two dates"""
 
 import six
 import datetime
@@ -10,6 +10,7 @@ import datetime
 
 def diff_dates(date1, date2):
     """Get the difference between two dates"""
+
     return abs(date2 - date1).days
 
 

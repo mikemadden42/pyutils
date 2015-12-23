@@ -18,10 +18,10 @@ def clean(directory, test_mode):
 
     if test_mode:
         print 'Running in test mode on %s...' % directory
-        print 'tmpwatch -m -t 60d %s' % (directory)
+        print 'tmpwatch -m -t 60d %s' % directory
     else:
         print 'Running in execute mode on %s...' % directory
-        print 'tmpwatch -m 60d %s' % (directory)
+        print 'tmpwatch -m 60d %s' % directory
 
 
 if __name__ == '__main__':

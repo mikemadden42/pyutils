@@ -13,11 +13,12 @@ import sys
 
 def location():
     """Get the location of a data center based on ip address."""
+
     host = 'www.alamo.ca'
 
     try:
         ip_address = socket.gethostbyname(host)
-    except socket.error as msg:
+    except socket.error, msg:
         six.print_(host, msg)
         sys.exit(1)
 

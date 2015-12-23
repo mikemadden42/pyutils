@@ -8,8 +8,10 @@ import yaml
 
 
 # http://martin-thoma.com/configuration-files-in-python/
+
 def read_yaml():
     """Read & print YAML."""
+
     with open('config.yml', 'r') as ymlfile:
         cfg = yaml.load(ymlfile)
 
@@ -17,6 +19,7 @@ def read_yaml():
             print section
             print cfg['mysql']
             print cfg['other']
+
 
 if __name__ == '__main__':
     read_yaml()
