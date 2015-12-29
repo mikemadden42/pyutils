@@ -31,5 +31,4 @@ def split_dir(directory):
 
 
 if __name__ == '__main__':
-    split_dir('nma1')
-    split_dir('nma2')
+    split_dir('dir1')

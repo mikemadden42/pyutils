@@ -1,0 +1,2 @@
+http://www.nfl.com/liveupdate/scorestrip/ss.json
+https://raw.githubusercontent.com/facebook/php-webdriver/community/composer.json
