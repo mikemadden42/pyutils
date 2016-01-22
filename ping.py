@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 """Perform a ping for a set of hosts."""
 
+import argparse
 import commands
 from multiprocessing.dummy import Pool as ThreadPool
 from multiprocessing import cpu_count
@@ -15,10 +16,10 @@ def find(host):
     return (status, host, text)
 
 
-def ping():
+def ping(hosts):
     """Perform a ping for a set of hosts."""
 
-    infile = open('hosts.txt', 'r')
+    infile = open(hosts, 'r')
     hosts = [x.strip() for x in infile.readlines()]
 
     pool = ThreadPool(cpu_count() * 4)
@@ -33,4 +34,7 @@ def ping():
 
 
 if __name__ == '__main__':
-    ping()
+    PARSER = argparse.ArgumentParser(description='ping a set of hosts')
+    PARSER.add_argument('-f', '--file', help='hosts file', required=True)
+    ARGS = vars(PARSER.parse_args())
+    ping(ARGS['file'])
