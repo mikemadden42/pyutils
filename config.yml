@@ -1,11 +1,12 @@
 mysql:
-    host: localhost
-    user: root
-    passwd: my_secret_password
-    db: write-math
+  db: write-math
+  host: localhost
+  passwd: my_secret_password
+  user: root
 other:
-    preprocessing_queue:
-        - preprocessing.scale_and_center
-        - preprocessing.dot_reduction
-        - preprocessing.connect_lines
-    use_anonymous: yes
+  preprocessing_queue:
+  - preprocessing.scale_and_center
+  - preprocessing.dot_reduction
+  - preprocessing.connect_lines
+  use_anonymous: true
+
