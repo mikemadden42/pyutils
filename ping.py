@@ -2,7 +2,10 @@
 """Perform a ping for a set of hosts."""
 
 import argparse
-import commands
+try:
+    import commands as cmds
+except ImportError as e:
+    import subprocess as cmds
 from multiprocessing.dummy import Pool as ThreadPool
 from multiprocessing import cpu_count
 import six
@@ -12,7 +15,7 @@ def find(host):
     """Perform a ping for a given host."""
 
     cmd = 'ping -c 1 -q ' + host
-    (status, text) = commands.getstatusoutput(cmd)
+    (status, text) = cmds.getstatusoutput(cmd)
     return (status, host, text)
 
 
