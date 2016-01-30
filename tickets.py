@@ -4,6 +4,7 @@
 from collections import defaultdict
 import argparse
 import csv
+import six
 
 
 def tickets(tickets_file):
@@ -21,10 +22,10 @@ def tickets(tickets_file):
             d[assignee].append(work_details)
 
     for (key, values) in d.iteritems():
-        print key, '-', len(values), 'request(s)'
+        six.print_(key, '-', len(values), 'request(s)')
         for item in values:
-            print item
-        print
+            six.print_(item)
+        six.print_()
 
 
 if __name__ == '__main__':
