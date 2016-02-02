@@ -37,6 +37,6 @@ if __name__ == '__main__':
 
     if options.directory is None:
         parser.print_help()
-        sys.exit(os.EX_USAGE)
+        sys.exit(os.X_OK)
 
     clean(options.directory, options.test)

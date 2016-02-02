@@ -2,9 +2,6 @@
 
 """Get the current stock quotes"""
 
-import os
-import sys
-
 import requests
 
 
@@ -16,7 +13,6 @@ def quotes():
     print response.status_code
     print response.ok
 
-    print 'Hello %s on %s.' % (os.getlogin(), sys.platform)
 
 if __name__ == '__main__':
     quotes()
