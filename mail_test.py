@@ -4,8 +4,6 @@
 
 # https://docs.python.org/2/library/smtplib.html
 
-import os
-import sys
 import smtplib
 
 
@@ -16,8 +14,6 @@ def prompt(message):
 
 def mail_test():
     """Simple SMTP test"""
-    print 'Hello %s on %s.' % (os.getlogin(), sys.platform)
-
     fromaddr = prompt("From: ")
     toaddrs = prompt("To: ").split()
     print "Enter message, end with ^D (Unix) or ^Z (Windows):"
