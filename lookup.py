@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 """Perform a DNS lookup for a set of hosts."""
 
 import socket

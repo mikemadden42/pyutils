@@ -10,7 +10,6 @@
 
 # Find the number of threads for a python process:
 # ps -o nlwp $(pgrep python)
-
 """Get the status of a set of urls."""
 
 from multiprocessing.dummy import Pool as ThreadPool

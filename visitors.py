@@ -2,7 +2,6 @@
 
 # https://mail.python.org/pipermail/tutor/2003-August/024435.html
 # https://docs.python.org/2/library/collections.html#ordereddict-objects
-
 """
 Get the stats (ips, urls, agents) for an Apache access log.
 """
@@ -37,13 +36,8 @@ def visitors():
         # six.print_(URLS)
         # six.print_(AGENTS)
 
-        # six.print_(OrderedDict(sorted(list(IPS.items()), key=lambda t: t[1])))
+        six.print_(OrderedDict(sorted(list(URLS.items()), key=lambda t: t[1])))
 
-        six.print_(OrderedDict(sorted(list(URLS.items()), key=lambda t: \
-                   t[1])))
-
-
-        # six.print_(OrderedDict(sorted(list(AGENTS.items()), key=lambda t: t[1])))
 
 if __name__ == '__main__':
     visitors()

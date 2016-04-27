@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 """
 Demo script for accepting & validating passwords.
 """
@@ -8,9 +7,9 @@ import getpass
 import hashlib
 import six
 
-
 # https://pymotw.com/2/getpass/
 # http://stackoverflow.com/questions/9594125/salt-and-hash-a-password-in-python
+
 
 def guess():
     """Accept & validate password."""

@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 """
 Demo script for reading YAML.
 """
@@ -7,8 +6,8 @@ Demo script for reading YAML.
 import yaml
 import six
 
-
 # http://martin-thoma.com/configuration-files-in-python/
+
 
 def read_yaml():
     """Read & print YAML."""

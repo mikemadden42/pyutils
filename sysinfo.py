@@ -13,13 +13,12 @@ def boot():
     """Get the boot time"""
 
     try:
-        boot_time = psutil.boot_time()
+        bootup = psutil.boot_time()
     except AttributeError:
-        boot_time = psutil.get_boot_time()
+        bootup = psutil.get_boot_time()
 
     time_stamp = \
-        datetime.datetime.fromtimestamp(boot_time).strftime('%Y-%m-%d %H:%M:%S'
-            )
+        datetime.datetime.fromtimestamp(bootup).strftime('%Y-%m-%d %H:%M:%S')
     six.print_('Boot time: %s' % time_stamp)
 
 # http://stackoverflow.com/questions/1006289/how-to-find-out-the-number-of-cpus-using-python

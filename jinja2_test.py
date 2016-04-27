@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 # http://kagerato.net/articles/software/libraries/jinja-quickstart.html
-
 """jinja2 demo script"""
 
 import os

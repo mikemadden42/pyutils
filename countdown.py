@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 # http://stackoverflow.com/questions/8419564/difference-between-two-dates
-
 """Get the difference between two dates"""
 
 import datetime

@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 """Check URLs with a JSON endpoint"""
 
 import os

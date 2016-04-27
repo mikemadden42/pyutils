@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 """Find broken links in a directory"""
 
 import os
