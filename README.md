@@ -4,17 +4,17 @@ Python utility scripts
 ## Prerequisites
 These scripts rely on the a few external libraries.
 
-To install these with pip:
+Install these with pip:
 
 ```bash
-$ pip install --upgrade Jinja2 PyYAML psutil requests six
+$ pip install --upgrade Jinja2 PyYAML nose psutil requests six
 ```
 
-To format & lint these scripts:
+Format & lint these scripts:
 
 ```bash
-PYTHONPATH=$HOME/github.com/google/yapf python $HOME/github.com/google/yapf/yapf FILE.py > FILE.py.yapf
-diff FILE.py FILE.py.yapf
-
+pep8 FILE.py
+pyflakes FILE.py
 pylint FILE.py
+yapf FILE.py
 ```
