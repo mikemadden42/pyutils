@@ -7,16 +7,16 @@ from collections import defaultdict
 
 def check_shell(logfile):
     """Scan the gitlab nginx logs for any health issues."""
-    d = defaultdict(int)
+    warnings = defaultdict(int)
     print 'ERRORS IN %s:' % (logfile)
     with open(logfile) as infile:
         for line in infile:
             line = line.rstrip(os.linesep)
             if line.startswith('W, '):
                 warning = line.split('WARN -- : ')[1]
-                d[warning] += 1
+                warnings[warning] += 1
 
-    for key, val in d.iteritems():
+    for key, val in warnings.iteritems():
         print '"%s" repeated %d times' % (key, val)
     print
 

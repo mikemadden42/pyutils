@@ -9,19 +9,19 @@ import six
 
 def tickets(tickets_file):
     """Summarize tickets by user"""
-    d = defaultdict(list)
+    items = defaultdict(list)
 
-    with open(tickets_file, 'rb') as f:
-        reader = csv.reader(f)
+    with open(tickets_file, 'rb') as infile:
+        reader = csv.reader(infile)
         for row in reader:
             assignee = row[49]
             summary = row[32]
             request = row[50]
             date = row[19]
             work_details = '%s - %s - %s' % (request, date, summary)
-            d[assignee].append(work_details)
+            items[assignee].append(work_details)
 
-    for (key, values) in d.iteritems():
+    for (key, values) in items.iteritems():
         six.print_(key, '-', len(values), 'request(s)')
         for item in values:
             six.print_(item)

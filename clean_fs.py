@@ -25,18 +25,18 @@ def clean(directory, test_mode):
 
 
 if __name__ == '__main__':
-    parser = optparse.OptionParser()
-    parser.add_option('-d', '--directory', dest='directory')
-    parser.add_option('-t',
+    PARSER = optparse.OptionParser()
+    PARSER.add_option('-d', '--directory', dest='directory')
+    PARSER.add_option('-t',
                       '--test',
                       dest='test',
                       default=False,
                       action='store_true')
 
-    (options, args) = parser.parse_args()
+    (OPTIONS, ARGS) = PARSER.parse_args()
 
-    if options.directory is None:
-        parser.print_help()
+    if OPTIONS.directory is None:
+        PARSER.print_help()
         sys.exit(os.X_OK)
 
-    clean(options.directory, options.test)
+    clean(OPTIONS.directory, OPTIONS.test)

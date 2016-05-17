@@ -4,7 +4,7 @@
 import argparse
 try:
     import commands as cmds
-except ImportError as e:
+except ImportError as ex:
     import subprocess as cmds
 from multiprocessing.dummy import Pool as ThreadPool
 from multiprocessing import cpu_count
