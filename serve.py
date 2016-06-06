@@ -28,8 +28,8 @@ else:
 if sys.argv[2:]:
     os.chdir(sys.argv[2])
 
-SERVER = ThreadingSimpleServer(
-    ('', PORT), SimpleHTTPServer.SimpleHTTPRequestHandler)
+SERVER = ThreadingSimpleServer(('', PORT),
+                               SimpleHTTPServer.SimpleHTTPRequestHandler)
 
 try:
     while 1:
