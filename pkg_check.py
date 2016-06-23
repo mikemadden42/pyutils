@@ -13,7 +13,7 @@ def check():
     packages = defaultdict(int)
     all_pkgs = 'all_pkgs.gz'
     required_pkgs = 'required_pkgs.txt'
-    url = 'http://reflection.oss.ou.edu/raspbian/raspbian/dists/jessie/main/binary-armhf/Packages.gz'
+    url = 'http://lug.mtu.edu/raspbian/raspbian/dists/jessie/main/binary-armhf/Packages.gz'
 
     if not os.path.exists(all_pkgs):
         six.print_('Downloading package list...')
