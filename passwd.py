@@ -15,7 +15,7 @@ def guess():
     """Accept & validate password."""
 
     curr_pass = getpass.getpass('What is your favorite password? ')
-    digest = hashlib.sha1(curr_pass).hexdigest()
+    digest = hashlib.sha1(curr_pass.encode('utf-8')).hexdigest()
     six.print_(digest)
     if curr_pass.lower() == 'blue':
         six.print_('Right.  Off you go.')
