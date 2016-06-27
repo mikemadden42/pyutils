@@ -6,15 +6,9 @@
 Get the stats (ips, urls, agents) for an Apache access log.
 """
 
+from collections import OrderedDict
 import os
-import sys
 import six
-
-try:
-    from collections import OrderedDict
-except ImportError:
-    six.print_('python 2.7.x needed')
-    sys.exit(1)
 
 IPS = {}
 URLS = {}

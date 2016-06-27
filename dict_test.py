@@ -1,14 +1,8 @@
 #!/usr/bin/env python
 """Test various dictionary sorts"""
 
-import sys
+from collections import OrderedDict
 import six
-
-try:
-    from collections import OrderedDict
-except ImportError:
-    six.print_('python 2.7.x needed')
-    sys.exit(1)
 
 
 def dict_test():

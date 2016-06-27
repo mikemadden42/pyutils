@@ -17,3 +17,4 @@ def empty_dirs(root_dir='.'):
 
 if __name__ == '__main__':
     six.print_(list(empty_dirs('/tmp')))
+    six.print_(list(empty_dirs('/var/tmp')))

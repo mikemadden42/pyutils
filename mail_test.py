@@ -6,12 +6,10 @@
 import smtplib
 import six
 
-from six.moves import input
-
 
 def prompt(message):
     """Simple prompt method"""
-    return input(message).strip()
+    return six.moves.input(message).strip()
 
 
 def mail_test():
@@ -24,7 +22,7 @@ def mail_test():
     msg = ("From: %s\r\nTo: %s\r\n\r\n" % (fromaddr, ", ".join(toaddrs)))
     while 1:
         try:
-            line = input()
+            line = six.moves.input()
         except EOFError:
             break
         if not line:
