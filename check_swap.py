@@ -1,10 +1,12 @@
 #!/usr/bin/env python
+"""Check swap usage & send alert if swap is high."""
 
 import platform
 import smtplib
 
 
 def mail_alert(percent):
+    """Send alert if swap is high."""
     subject = 'swap on %s - %.2f used' % (platform.node(), percent)
     sender = 'from@fastmail.com'
     receivers = 'to@fastmail.com'
@@ -12,17 +14,18 @@ def mail_alert(percent):
     message = ("Subject: %s\r\nFrom: %s\r\nTo: %s\r\n\r\n" %
                (subject, sender, receivers))
     try:
-        smtpObj = smtplib.SMTP('localhost')
-        smtpObj.sendmail(sender, receivers, message)
+        server = smtplib.SMTP('localhost')
+        server.sendmail(sender, receivers, message)
         print "Successfully sent email"
     except smtplib.SMTPException:
         print "Error: unable to send email"
 
 
 def check_swap():
-    with open('/proc/swaps') as f:
-        next(f)
-        for line in f:
+    """Check swap usage."""
+    with open('/proc/swaps') as infile:
+        next(infile)
+        for line in infile:
             stats = line.split()
             size = stats[2]
             used = stats[3]
