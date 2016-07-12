@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 """Check load and email alert if load is high."""
 
+import multiprocessing
 import platform
 import smtplib
 
 
 def mail_alert(load):
     """Email alert if load is high."""
-    subject = 'load on %s - %.2f' % (platform.node(), load)
+    subject = 'load on %s -> %.2f' % (platform.node(), load)
     sender = 'from@fastmail.com'
     receivers = 'to@fastmail.com'
 
@@ -27,7 +28,7 @@ def check_load():
         for line in infile:
             stats = line.split()
             load_avg = float(stats[2])
-            if load_avg > 1.00:
+            if load_avg > multiprocessing.cpu_count():
                 mail_alert(load_avg)
 
 
