@@ -21,8 +21,9 @@ def dict_test():
     six.print_(OrderedDict(sorted(list(fruit.items()), key=lambda t: t[1])))
 
     # dictionary sorted by length of the key string
-    six.print_(OrderedDict(sorted(
-        list(fruit.items()), key=lambda t: len(t[0]))))
+    six.print_(
+        OrderedDict(sorted(
+            list(fruit.items()), key=lambda t: len(t[0]))))
 
 
 if __name__ == '__main__':
