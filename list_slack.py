@@ -8,7 +8,7 @@ import os
 from slacker import Slacker
 
 
-def slack_list():
+def list_slack():
     """List channels & users in slack."""
     try:
         token = os.environ['SLACK_TOKEN']
@@ -36,4 +36,4 @@ def slack_list():
 
 
 if __name__ == '__main__':
-    slack_list()
+    list_slack()
