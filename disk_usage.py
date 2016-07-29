@@ -1,0 +1,58 @@
+#!/usr/bin/env python
+"""Estimate file space usage."""
+
+# Based on https://gist.github.com/xamox/4711286
+
+import os
+from collections import namedtuple
+
+
+def disk_partitions(all_mounts=False):
+    """Return all mountd partitions as a nameduple.
+    If all_mounts == False return physical partitions only."""
+    phydevs = []
+    disk_ntuple = namedtuple('partition', 'device mountpoint fstype')
+    fs = open("/proc/filesystems", "r")
+    for line in fs:
+        if not line.startswith("nodev"):
+            phydevs.append(line.strip())
+
+    retlist = []
+    mtab = open('/etc/mtab', "r")
+    for line in mtab:
+        if not all_mounts and line.startswith('none'):
+            continue
+        fields = line.split()
+        device = fields[0]
+        mountpoint = fields[1]
+        fstype = fields[2]
+        if not all_mounts and fstype not in phydevs:
+            continue
+        if device == 'none':
+            device = ''
+        ntuple = disk_ntuple(device, mountpoint, fstype)
+        retlist.append(ntuple)
+    return retlist
+
+
+def disk_usage(path):
+    """Return disk usage associated with path."""
+    st = os.statvfs(path)
+    free = (st.f_bavail * st.f_frsize)
+    total = (st.f_blocks * st.f_frsize)
+    used = (st.f_blocks - st.f_bfree) * st.f_frsize
+    usage_ntuple = namedtuple('usage', 'total used free percent')
+    try:
+        percent = (float(used) / total) * 100
+    except ZeroDivisionError:
+        percent = 0
+    # NB: the percentage is -5% than what shown by df due to
+    # reserved blocks that we are currently not considering:
+    # http://goo.gl/sWGbH
+    return usage_ntuple(total, used, free, round(percent, 1))
+
+
+if __name__ == '__main__':
+    for part in disk_partitions():
+        print part
+        print "    %s\n" % str(disk_usage(part.mountpoint))
