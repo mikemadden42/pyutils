@@ -12,8 +12,8 @@ def disk_partitions(all_mounts=False):
     If all_mounts == False return physical partitions only."""
     phydevs = []
     disk_ntuple = namedtuple('partition', 'device mountpoint fstype')
-    fs = open("/proc/filesystems", "r")
-    for line in fs:
+    fsys = open("/proc/filesystems", "r")
+    for line in fsys:
         if not line.startswith("nodev"):
             phydevs.append(line.strip())
 
@@ -37,10 +37,10 @@ def disk_partitions(all_mounts=False):
 
 def disk_usage(path):
     """Return disk usage associated with path."""
-    st = os.statvfs(path)
-    free = (st.f_bavail * st.f_frsize)
-    total = (st.f_blocks * st.f_frsize)
-    used = (st.f_blocks - st.f_bfree) * st.f_frsize
+    stats = os.statvfs(path)
+    free = (stats.f_bavail * stats.f_frsize)
+    total = (stats.f_blocks * stats.f_frsize)
+    used = (stats.f_blocks - stats.f_bfree) * stats.f_frsize
     usage_ntuple = namedtuple('usage', 'total used free percent')
     try:
         percent = (float(used) / total) * 100

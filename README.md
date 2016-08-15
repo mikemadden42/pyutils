@@ -7,7 +7,7 @@ These scripts rely on the a few external libraries.
 Install these with pip:
 
 ```bash
-$ pip install --upgrade Jinja2 PyYAML nose psutil requests six
+$ pip install --upgrade Jinja2 PyYAML nose psutil requests six slacker
 ```
 
 Format & lint these scripts:
