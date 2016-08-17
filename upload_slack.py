@@ -4,6 +4,7 @@
 # https://github.com/os/slacker
 # https://api.slack.com/methods
 
+import argparse
 import os
 from slacker import Slacker
 
@@ -26,4 +27,7 @@ def upload_slack(file_upload):
 
 
 if __name__ == '__main__':
-    upload_slack('foo.txt')
+    PARSER = argparse.ArgumentParser(description='upload a file to slack')
+    PARSER.add_argument('-f', '--file', help='file', required=True)
+    ARGS = vars(PARSER.parse_args())
+    upload_slack(ARGS['file'])
