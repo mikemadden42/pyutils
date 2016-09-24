@@ -7,7 +7,7 @@ import sys
 
 def hello():
     """Hello world function"""
-    print 'Hello %s on %s.' % (os.getlogin(), sys.platform)
+    print 'Hello uid %s on %s.' % (os.getuid(), sys.platform)
 
 
 if __name__ == '__main__':
