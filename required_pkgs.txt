@@ -15,6 +15,8 @@ dmidecode
 dnsutils
 dos2unix
 enscript
+ethtool
+firefox-esr
 fping
 gawk
 git
@@ -35,11 +37,11 @@ libperl-critic-perl
 lsof
 make
 mlocate
+mutt
 net-tools
 ninja-build
 nmap
 ntp
-openjdk-7-jdk
 openssh-client
 openssh-server
 openssl
@@ -74,6 +76,7 @@ python3-six
 python3-yaml
 rsync
 ruby
+s3cmd
 screen
 sed
 strace
@@ -84,6 +87,7 @@ tcpdump
 tmux
 vim-nox
 vim-puppet
+w3m
 wget
 xz-utils
 zsh
