@@ -17,9 +17,11 @@ TEMPLATE = TEMPLATE_ENV.get_template(TEMPLATE_FILE)
 
 FAVORITES = ['chocolates', 'lunar eclipses', 'rabbits']
 
-TEMPLATE_VARS = {'title': 'Test Example',
-                 'description': 'A simple inquiry of function.',
-                 'favorites': FAVORITES}
+TEMPLATE_VARS = {
+    'title': 'Test Example',
+    'description': 'A simple inquiry of function.',
+    'favorites': FAVORITES
+}
 
 OUTPUT_TEXT = TEMPLATE.render(TEMPLATE_VARS)
 
