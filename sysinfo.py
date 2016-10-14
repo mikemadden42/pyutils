@@ -17,6 +17,7 @@ def boot():
         datetime.datetime.fromtimestamp(bootup).strftime('%Y-%m-%d %H:%M:%S')
     six.print_('Boot time: %s' % time_stamp)
 
+
 # http://stackoverflow.com/questions/1006289/how-to-find-out-the-number-of-cpus-using-python
 
 
@@ -29,6 +30,7 @@ def cpus():
         six.print_('Logical CPUs: %d' % psutil.cpu_count())
     except AttributeError:
         pass
+
 
 # http://stackoverflow.com/questions/22102999/get-total-physical-memory-from-python
 
