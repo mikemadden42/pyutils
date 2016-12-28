@@ -12,13 +12,13 @@ def disk_partitions(all_mounts=False):
     If all_mounts == False return physical partitions only."""
     phydevs = []
     disk_ntuple = namedtuple('partition', 'device mountpoint fstype')
-    fsys = open("/proc/filesystems", "r")
+    fsys = open('/proc/filesystems', 'r')
     for line in fsys:
-        if not line.startswith("nodev"):
+        if not line.startswith('nodev'):
             phydevs.append(line.strip())
 
     retlist = []
-    mtab = open('/etc/mtab', "r")
+    mtab = open('/etc/mtab', 'r')
     for line in mtab:
         if not all_mounts and line.startswith('none'):
             continue
@@ -54,5 +54,5 @@ def disk_usage(path):
 
 if __name__ == '__main__':
     for part in disk_partitions():
-        print part
-        print "    %s\n" % str(disk_usage(part.mountpoint))
+        print(part)
+        print('    %s\n' % str(disk_usage(part.mountpoint)))

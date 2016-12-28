@@ -12,14 +12,14 @@ def mail_alert(load):
     sender = 'from@fastmail.com'
     receivers = 'to@fastmail.com'
 
-    message = ("Subject: %s\r\nFrom: %s\r\nTo: %s\r\n\r\n" %
+    message = ('Subject: %s\r\nFrom: %s\r\nTo: %s\r\n\r\n' %
                (subject, sender, receivers))
     try:
         server = smtplib.SMTP('localhost')
         server.sendmail(sender, receivers, message)
-        print "Successfully sent email"
+        print('Successfully sent email')
     except smtplib.SMTPException:
-        print "Error: unable to send email"
+        print('Error: unable to send email')
 
 
 def check_load():

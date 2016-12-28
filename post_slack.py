@@ -18,10 +18,10 @@ def post_slack():
             channel='#bots',
             text='',
             as_user=True,
-            attachments=[{
-                "pretext": "Subject",
-                "text": "Body"
-            }])
+            attachments=[{'pretext'
+                          'Subject'
+                          'text'
+                          'Body'}])
         print obj.successful, obj.__dict__['body']['channel'], obj.__dict__[
             'body']['ts']
     except KeyError, ex:

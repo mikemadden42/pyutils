@@ -8,4 +8,4 @@ def hamming(i):
 
 
 if __name__ == '__main__':
-    print hamming(0x5555555555555555)
+    print(hamming(0x5555555555555555))

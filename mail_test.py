@@ -14,12 +14,12 @@ def prompt(message):
 
 def mail_test():
     """Simple SMTP test"""
-    fromaddr = prompt("From: ")
-    toaddrs = prompt("To: ").split()
-    six.print_("Enter message, end with ^D (Unix) or ^Z (Windows):")
+    fromaddr = prompt('From: ')
+    toaddrs = prompt('To: ').split()
+    six.print_('Enter message, end with ^D (Unix) or ^Z (Windows):')
 
     # Add the From: and To: headers at the start!
-    msg = ("From: %s\r\nTo: %s\r\n\r\n" % (fromaddr, ", ".join(toaddrs)))
+    msg = ('From: %s\r\nTo: %s\r\n\r\n' % (fromaddr, ', '.join(toaddrs)))
     while 1:
         try:
             line = six.moves.input()
@@ -29,7 +29,7 @@ def mail_test():
             break
         msg = msg + line
 
-    six.print_("Message length is " + repr(len(msg)))
+    six.print_('Message length is ' + repr(len(msg)))
 
     server = smtplib.SMTP('localhost')
     server.set_debuglevel(1)
