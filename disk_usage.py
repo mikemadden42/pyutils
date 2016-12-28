@@ -6,6 +6,8 @@
 import os
 from collections import namedtuple
 
+import six
+
 
 def disk_partitions(all_mounts=False):
     """Return all mountd partitions as a nameduple.
@@ -54,5 +56,5 @@ def disk_usage(path):
 
 if __name__ == '__main__':
     for part in disk_partitions():
-        print(part)
-        print('    %s\n' % str(disk_usage(part.mountpoint)))
+        six.print_(part)
+        six.print_('    %s\n' % str(disk_usage(part.mountpoint)))

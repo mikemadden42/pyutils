@@ -5,6 +5,8 @@ import multiprocessing
 import platform
 import smtplib
 
+import six
+
 
 def mail_alert(load):
     """Email alert if load is high."""
@@ -17,9 +19,9 @@ def mail_alert(load):
     try:
         server = smtplib.SMTP('localhost')
         server.sendmail(sender, receivers, message)
-        print('Successfully sent email')
+        six.print_('Successfully sent email')
     except smtplib.SMTPException:
-        print('Error: unable to send email')
+        six.print_('Error: unable to send email')
 
 
 def check_load():

@@ -4,10 +4,12 @@
 import os
 import sys
 
+import six
+
 
 def hello():
     """Hello world function"""
-    print('Hello uid %s on %s.' % (os.getuid(), sys.platform))
+    six.print_('Hello uid %s on %s.' % (os.getuid(), sys.platform))
 
 
 if __name__ == '__main__':

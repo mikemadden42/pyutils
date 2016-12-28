@@ -8,18 +8,20 @@ for multiples of five, print Buzz (instead of the number)
 for multiples of both three and five,  print FizzBuzz (instead of the number)
 """
 
+import six
+
 
 def fizzbuzz():
     """Prints the integers from 1 to 100 (inclusive)."""
     for i in xrange(1, 101):
         if i % 15 == 0:
-            print 'FizzBuzz'
+            six.print_('FizzBuzz')
         elif i % 3 == 0:
-            print 'Fizz'
+            six.print_('Fizz')
         elif i % 5 == 0:
-            print 'Buzz'
+            six.print_('Buzz')
         else:
-            print i
+            six.print_(i)
 
 
 if __name__ == '__main__':

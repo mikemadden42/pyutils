@@ -3,6 +3,8 @@
 
 import socket
 
+import six
+
 
 def make_hosts():
     """Create /etc/hosts file from hostnames."""
@@ -11,9 +13,9 @@ def make_hosts():
     for host in hosts:
         try:
             ip_address = socket.gethostbyname(host)
-            print '%-15s %s' % (ip_address, host)
+            six.print_('%-15s %s' % (ip_address, host))
         except socket.error as msg:
-            print '# %s %s' % (host, msg)
+            six.print_('# %s %s' % (host, msg))
 
 
 if __name__ == '__main__':

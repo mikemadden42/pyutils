@@ -6,13 +6,15 @@
 from datetime import datetime
 from dateutil.tz import tzutc, tzlocal
 
+import six
+
 
 def utc_local():
     """Convert UTC to local time."""
     utc = datetime.now(tzutc())
     local = utc.astimezone(tzlocal())
-    print 'UTC:  ', utc
-    print 'Local:', local
+    six.print_('UTC:  ', utc)
+    six.print_('Local:', local)
 
 
 if __name__ == '__main__':
