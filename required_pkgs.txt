@@ -2,6 +2,7 @@ ant
 atop
 awscli
 bash
+bc
 build-essential
 bzip2
 clang
@@ -27,6 +28,7 @@ htop
 hwloc
 iftop
 iotop
+iperf3
 ipython
 ksh
 less

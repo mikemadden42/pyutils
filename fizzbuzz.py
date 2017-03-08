@@ -13,6 +13,10 @@ import six
 
 def fizzbuzz():
     """Prints the integers from 1 to 100 (inclusive)."""
+    try:
+        xrange
+    except NameError:
+        xrange = range
     for i in xrange(1, 101):
         if i % 15 == 0:
             six.print_('FizzBuzz')
