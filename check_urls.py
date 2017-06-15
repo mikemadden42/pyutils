@@ -40,7 +40,7 @@ def check():
         if result is not None:
             if result.status_code != 200:
                 six.print_('Invalid status code', result.url)
-            if len(result.content) == 0:
+            if not result.content:
                 six.print_('Invalid content length', result.url)
 
     pool.close()

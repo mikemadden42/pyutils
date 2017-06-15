@@ -14,8 +14,8 @@ def mail_alert(load):
     sender = 'from@fastmail.com'
     receivers = 'to@fastmail.com'
 
-    message = ('Subject: %s\r\nFrom: %s\r\nTo: %s\r\n\r\n' %
-               (subject, sender, receivers))
+    message = ('Subject: %s\r\nFrom: %s\r\nTo: %s\r\n\r\n' % (subject, sender,
+                                                              receivers))
     try:
         server = smtplib.SMTP('localhost')
         server.sendmail(sender, receivers, message)
