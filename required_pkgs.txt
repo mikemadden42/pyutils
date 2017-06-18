@@ -6,7 +6,7 @@ bc
 build-essential
 bzip2
 clang
-clang-format-3.5
+clang-format
 cmake
 coreutils
 cpio
@@ -88,7 +88,6 @@ tar
 tcpdump
 tmux
 vim-nox
-vim-puppet
 w3m
 wget
 xz-utils

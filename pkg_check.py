@@ -8,19 +8,18 @@ import urllib
 import six
 
 
-def check():
+def check(pkgs):
     '''Check if packages exist for Raspbian.'''
     packages = defaultdict(int)
-    all_pkgs = 'all_pkgs.gz'
     required_pkgs = 'required_pkgs.txt'
-    url = 'http://reflection.oss.ou.edu/raspbian/raspbian/dists/jessie/main/binary-armhf/Packages.gz'
+    url = 'http://mirrors.gigenet.com/debian/dists/stretch/main/binary-amd64/Packages.gz'
 
-    if not os.path.exists(all_pkgs):
+    if not os.path.exists(pkgs):
         six.print_('Downloading package list...')
-        urllib.urlretrieve(url, all_pkgs)
+        urllib.urlretrieve(url, pkgs)
 
-    with gzip.open(all_pkgs, 'rt') as pkgs:
-        for line in pkgs:
+    with gzip.open(pkgs, 'rt') as pkgfile:
+        for line in pkgfile:
             line = line.rstrip(os.linesep)
             if line.startswith('Package'):
                 pkg = line.split(': ')[1]
@@ -34,4 +33,4 @@ def check():
 
 
 if __name__ == '__main__':
-    check()
+    check('Packages.gz')
