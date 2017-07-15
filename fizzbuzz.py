@@ -9,15 +9,12 @@ for multiples of both three and five,  print FizzBuzz (instead of the number)
 """
 
 import six
+from six.moves import range
 
 
 def fizzbuzz():
     """Prints the integers from 1 to 100 (inclusive)."""
-    try:
-        xrange
-    except NameError:
-        xrange = range
-    for i in xrange(1, 101):
+    for i in range(1, 101):
         if i % 15 == 0:
             six.print_('FizzBuzz')
         elif i % 3 == 0:
