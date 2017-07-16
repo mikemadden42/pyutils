@@ -14,7 +14,7 @@ $ pip install --upgrade Jinja2 PyYAML nose psutil pytest requests six slacker
 Format & lint these scripts:
 
 ```bash
-$ pip install --upgrade pep8 prospector pyflakes pylint yapf
+$ pip install --upgrade flake8 pep8 prospector pyflakes pylint yapf
 ```
 
 ```bash
