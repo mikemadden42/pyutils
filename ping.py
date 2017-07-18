@@ -14,7 +14,7 @@ import six
 def find(host):
     """Perform a ping for a given host."""
 
-    cmd = 'ping -c 1 -q ' + host
+    cmd = 'ping -w 1 -q ' + host
     (status, text) = cmds.getstatusoutput(cmd)
     return (status, host, text)
 
