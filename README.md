@@ -18,6 +18,7 @@ $ pip install --upgrade flake8 pep8 prospector pyflakes pylint yapf
 ```
 
 ```bash
+$ flake8 FILE.py
 $ pep8 FILE.py
 $ prospector FILE.py
 $ pyflakes FILE.py
