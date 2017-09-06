@@ -7,7 +7,7 @@ import requests
 
 def quakes():
     """Print recent quakes."""
-    url = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson'
+    url = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson'
     req = requests.get(url)
     data = req.json()
     for feature in data['features']:
