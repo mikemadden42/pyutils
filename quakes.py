@@ -2,6 +2,7 @@
 """Print recent quakes."""
 
 import time
+import six
 import requests
 
 
@@ -18,7 +19,7 @@ def quakes():
         mag = feature['properties']['mag']
         place = feature['properties']['place']
         depth = feature['geometry']['coordinates'][2]
-        print date, kind, mag, place, depth
+        six.print_(date, kind, mag, place, depth)
 
 
 if __name__ == '__main__':
