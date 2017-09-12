@@ -5,6 +5,7 @@
 import psutil
 import six
 
+
 def psinfo():
     """Check various processes."""
     for proc in psutil.process_iter():

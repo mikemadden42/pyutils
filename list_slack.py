@@ -5,6 +5,7 @@
 # https://api.slack.com/methods
 
 import os
+import six
 from slacker import Slacker
 
 
@@ -18,21 +19,21 @@ def list_slack():
         response = slack.channels.list()
         channels = response.body['channels']
         for channel in channels:
-            print channel['id'], channel['name']
+            six.print_(channel['id'], channel['name'])
             # if not channel['is_archived']:
             # slack.channels.join(channel['name'])
-        print
+        six.print_()
 
         # Get users list
         response = slack.users.list()
         users = response.body['members']
         for user in users:
             if not user['deleted']:
-                print user['id'], user['name'], user['is_admin'], user[
-                    'is_owner']
-        print
-    except KeyError, ex:
-        print 'Environment variable %s not set.' % str(ex)
+                six.print_(user['id'], user['name'], user['is_admin'],
+                           user['is_owner'])
+        six.print_()
+    except (KeyError) as ex:
+        six.print_('Environment variable %s not set.' % str(ex))
 
 
 if __name__ == '__main__':

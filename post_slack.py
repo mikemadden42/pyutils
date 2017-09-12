@@ -5,6 +5,7 @@
 # https://api.slack.com/methods
 
 import os
+import six
 from slacker import Slacker
 
 
@@ -22,10 +23,10 @@ def post_slack():
                           'Subject'
                           'text'
                           'Body'}])
-        print obj.successful, obj.__dict__['body']['channel'], obj.__dict__[
-            'body']['ts']
-    except KeyError, ex:
-        print 'Environment variable %s not set.' % str(ex)
+        six.print_(obj.successful, obj.__dict__['body']['channel'],
+                   obj.__dict__['body']['ts'])
+    except (KeyError) as ex:
+        six.print_('Environment variable %s not set.' % str(ex))
 
 
 if __name__ == '__main__':

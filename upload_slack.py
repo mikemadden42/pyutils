@@ -6,6 +6,7 @@
 
 import argparse
 import os
+import six
 from slacker import Slacker
 
 
@@ -20,10 +21,10 @@ def upload_slack(file_upload):
         # channel (which can happen at upload time via the channels argument).
         # obj = slack.files.upload(file_upload, channels='#general')
         obj = slack.files.upload(file_upload)
-        print obj.successful, obj.body['file']['channels'], obj.body['file'][
-            'id']
-    except KeyError, ex:
-        print 'Environment variable %s not set.' % str(ex)
+        six.print_(obj.successful, obj.body['file']['channels'],
+                   obj.body['file']['id'])
+    except (KeyError) as ex:
+        six.print_('Environment variable %s not set.' % str(ex))
 
 
 if __name__ == '__main__':
