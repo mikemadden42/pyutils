@@ -19,10 +19,10 @@ def post_slack():
             channel='#bots',
             text='',
             as_user=True,
-            attachments=[{'pretext'
-                          'Subject'
-                          'text'
-                          'Body'}])
+            attachments=[{
+                'pretext': 'pretext',
+                'text': 'text',
+            }])
         six.print_(obj.successful, obj.__dict__['body']['channel'],
                    obj.__dict__['body']['ts'])
     except (KeyError) as ex:
