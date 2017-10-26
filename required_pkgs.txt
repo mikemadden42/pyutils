@@ -17,7 +17,6 @@ dnsutils
 dos2unix
 enscript
 ethtool
-firefox-esr
 fping
 gawk
 git
@@ -34,6 +33,7 @@ ksh
 less
 lftp
 libboost-all-dev
+libimage-exiftool-perl
 libkeyutils-dev
 libperl-critic-perl
 lsof
@@ -44,6 +44,7 @@ net-tools
 ninja-build
 nmap
 ntp
+openjdk-8-jdk
 openssh-client
 openssh-server
 openssl
