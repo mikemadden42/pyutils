@@ -7,7 +7,7 @@ import six
 
 def swap_info():
     """Check swap."""
-    print psutil.swap_memory()
+    six.print_(psutil.swap_memory())
 
 
 if __name__ == '__main__':
