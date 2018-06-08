@@ -12,9 +12,9 @@ def quakes():
     req = requests.get(url)
     data = req.json()
     for feature in data['features']:
-        date = time.strftime('%Y-%m-%d %H:%M:%S',
-                             time.gmtime(
-                                 feature['properties']['time'] / 1000.0))
+        date = time.strftime(
+            '%Y-%m-%d %H:%M:%S',
+            time.gmtime(feature['properties']['time'] / 1000.0))
         kind = feature['properties']['type']
         mag = feature['properties']['mag']
         place = feature['properties']['place']

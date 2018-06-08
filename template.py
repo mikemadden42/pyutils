@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Hello world function"""
 
+from __future__ import print_function
+
 import os
 import sys
 
