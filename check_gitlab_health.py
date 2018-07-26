@@ -17,7 +17,7 @@ def check_shell(logfile):
                 warning = line.split('WARN -- : ')[1]
                 warnings[warning] += 1
 
-    for key, val in warnings.items():
+    for key, val in list(warnings.items()):
         six.print_('"%s" repeated %d times' % (key, val))
     six.print_()
 
