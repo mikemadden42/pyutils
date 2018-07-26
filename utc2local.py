@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Convert UTC to local time."""
 
 # Based on: https://gist.github.com/dmdavis/9670681

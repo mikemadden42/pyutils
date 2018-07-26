@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Perform a DNS lookup for a set of hosts."""
 
 import socket

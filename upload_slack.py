@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Upload a file to slack."""
 
 # https://github.com/os/slacker

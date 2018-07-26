@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Scan the gitlab logs for any health issues."""
 
 import os

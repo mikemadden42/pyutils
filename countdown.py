@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # http://stackoverflow.com/questions/8419564/difference-between-two-dates
 """Get the difference between two dates"""

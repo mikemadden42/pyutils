@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
 Simple script that organizes a large directory that contains
 many individual files. The files will be moved to a directory

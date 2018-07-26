@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # Based on https://github.com/Nakiami/MultithreadedSimpleHTTPServer
 # Works for both Python 2.x & Python 3.x

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # http://kagerato.net/articles/software/libraries/jinja-quickstart.html
 """jinja2 demo script"""

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Perform a ping for a set of hosts."""
 
 import argparse

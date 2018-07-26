@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # https://mail.python.org/pipermail/tutor/2003-August/024435.html
 # https://docs.python.org/2/library/collections.html#ordereddict-objects

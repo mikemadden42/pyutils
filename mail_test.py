@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Simple SMTP test that sends an email"""
 
 # https://docs.python.org/2/library/smtplib.html

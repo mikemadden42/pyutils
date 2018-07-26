@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # https://pymotw.com/2/optparse/
 # http://www.alexonlinux.com/pythons-optparse-for-human-beings

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Check swap usage & send alert if swap is high."""
 
 import platform

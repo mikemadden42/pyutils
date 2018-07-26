@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Test various dictionary sorts"""
 
 from collections import OrderedDict

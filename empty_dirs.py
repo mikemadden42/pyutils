@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Find empty directories."""
 
 # http://stackoverflow.com/questions/26774892/how-to-find-recursively-empty-directories-in-python

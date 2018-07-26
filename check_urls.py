@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # http://chriskiehl.com/article/parallelism-in-one-line
 # https://docs.python.org/2/library/multiprocessing.html

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
 Prints the integers from 1 to 100 (inclusive).
 

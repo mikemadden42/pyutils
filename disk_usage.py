@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Estimate file space usage."""
 
 # Based on https://gist.github.com/xamox/4711286

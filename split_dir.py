@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # http://stackoverflow.com/questions/12497901/i-need-python-to-process-all-files-in-a-directory-but-it-only-gets-one
 # http://www.pythoncentral.io/how-to-slice-listsarrays-and-tuples-in-python/

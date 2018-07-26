@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Count the number of 1s in a binary representation of a number."""
 
 import six

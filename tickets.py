@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Summarize tickets by user"""
 
 from collections import defaultdict
