@@ -7,7 +7,7 @@ These scripts rely on the a few external libraries.
 Install these with pip:
 
 ```bash
-$ pip install --upgrade Jinja2 PyYAML nose psutil pytest requests six slacker
+$ pip install --upgrade Jinja2 PyYAML nose python-dateutil psutil pytest requests six slacker
 ```
 ## Linters
 
