@@ -5,28 +5,22 @@ import datetime
 import platform
 import sqlite3
 
+import psutil
+
 
 def main():
     """sqlite demo"""
-    host = platform.node()
+    address = psutil.net_if_addrs()['en0'][0].address
     date = str(datetime.datetime.now())
+    host = platform.node()
+    mac = psutil.net_if_addrs()['en0'][1].address
 
-    print(date)
-    print(host)
-
-    conn = sqlite3.connect('network.sqlite')
+    conn = sqlite3.connect("network.sqlite")
     cursor = conn.cursor()
 
-    # date format - YYYY-MM-DD HH:MM:SS.SSS
-    sql_create = """
-    CREATE TABLE outages
-    (date text, device text, ip text)
-    """
-
-    sql_insert = """
-    INSERT INTO outages
-    VALUES ('2018-08-21 13:04:52', 'localhost', '127.0.0.1')
-    """
+    sql_create = "CREATE TABLE outages (date text, device text, ip text, mac text)"
+    sql_insert = "INSERT INTO outages VALUES ('{}', '{}', '{}', '{}')".format(
+        date, host, address, mac)
 
     try:
         cursor.execute(sql_create)
