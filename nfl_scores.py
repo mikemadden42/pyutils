@@ -9,7 +9,7 @@ import six
 # http://www.nfl.com/liveupdate/scorestrip/postseason/ss.xml
 
 
-def nfs_scores():
+def nfl_scores():
     """Get the current NFL scores"""
 
     url = 'http://www.nfl.com/liveupdate/scorestrip/ss.json'
@@ -27,4 +27,4 @@ def nfs_scores():
 
 
 if __name__ == '__main__':
-    nfs_scores()
+    nfl_scores()
