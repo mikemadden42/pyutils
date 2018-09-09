@@ -2,7 +2,6 @@
 """Get the current NFL scores in json"""
 
 import requests
-import six
 
 # https://code.google.com/p/nfl-game-stats/
 # http://www.nfl.com/liveupdate/scorestrip/ss.json
@@ -12,18 +11,13 @@ import six
 def nfl_scores():
     """Get the current NFL scores"""
 
-    url = 'http://www.nfl.com/liveupdate/scorestrip/ss.json'
+    url = 'http://www.nfl.com/liveupdate/scores/scores.json'
     response = requests.get(url)
     data = response.json()
 
-    week = data['w']
-    year = data['y']
-    six.print_('%d WEEK %d' % (year, week))
-    for game in data['gms']:
-        try:
-            six.print_(game['h'], game['hs'], game['v'], game['vs'])
-        except UnicodeEncodeError:
-            pass
+    for key in data:
+        print(data[key]['home']['abbr'], data[key]['home']['score']['T'],
+              data[key]['away']['abbr'], data[key]['away']['score']['T'])
 
 
 if __name__ == '__main__':
