@@ -2,6 +2,7 @@
 """Get the current NFL scores in json"""
 
 import requests
+import six
 
 # https://code.google.com/p/nfl-game-stats/
 # http://www.nfl.com/liveupdate/scorestrip/ss.json
@@ -16,8 +17,8 @@ def nfl_scores():
     data = response.json()
 
     for key in data:
-        print(data[key]['home']['abbr'], data[key]['home']['score']['T'],
-              data[key]['away']['abbr'], data[key]['away']['score']['T'])
+        six.print_(data[key]['home']['abbr'], data[key]['home']['score']['T'],
+                   data[key]['away']['abbr'], data[key]['away']['score']['T'])
 
 
 if __name__ == '__main__':

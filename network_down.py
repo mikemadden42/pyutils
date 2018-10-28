@@ -6,6 +6,7 @@ import platform
 import sqlite3
 
 import psutil
+import six
 
 
 def main():
@@ -25,7 +26,7 @@ def main():
     try:
         cursor.execute(sql_create)
     except sqlite3.OperationalError as ex:
-        print(ex)
+        six.print_(ex)
 
     cursor.execute(sql_insert)
 
