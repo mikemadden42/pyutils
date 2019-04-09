@@ -8,20 +8,21 @@
 
 import time
 from pynput.mouse import Button, Controller
+import six
 
 
 def main():
     """Automote mouse clicks"""
     mouse = Controller()
 
-    print("GET READY!")
+    six.print_("GET READY!")
     time.sleep(10)
 
     # Press and release
     while True:
         mouse.press(Button.left)
         mouse.release(Button.left)
-        print("click")
+        six.print_("click")
         time.sleep(10)
 
 

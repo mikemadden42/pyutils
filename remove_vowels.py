@@ -4,6 +4,7 @@
 # https://stackoverflow.com/questions/23176001/remove-vowels-from-a-string
 
 import re
+import six
 
 
 def remove_vowels(text):
@@ -15,4 +16,4 @@ if __name__ == '__main__':
     BEATS = ('auditbeat', 'filebeat', 'heartbeat', 'journalbeat', 'metricbeat',
              'packetbeat', 'winlogbeat')
     for beat in BEATS:
-        print(remove_vowels(beat))
+        six.print_(remove_vowels(beat))
