@@ -4,10 +4,8 @@
 from collections import defaultdict
 import gzip
 import os
-import urllib.error
-import urllib.parse
-import urllib.request
 import six
+import six.moves
 
 
 def check(pkgs):
@@ -18,7 +16,7 @@ def check(pkgs):
 
     if not os.path.exists(pkgs):
         six.print_('Downloading package list...')
-        urllib.request.urlretrieve(url, pkgs)
+        six.moves.urllib.request.urlretrieve(url, pkgs)
 
     with gzip.open(pkgs, 'rt') as pkgfile:
         for line in pkgfile:
