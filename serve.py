@@ -17,8 +17,6 @@ class ThreadingSimpleServer(socketserver.ThreadingMixIn,
                             BaseHTTPServer.HTTPServer):
     """Simple HTTP server"""
 
-    pass
-
 
 if sys.argv[1:]:
     PORT = int(sys.argv[1])

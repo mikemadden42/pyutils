@@ -2,10 +2,7 @@
 """Perform a ping for a set of hosts."""
 
 import argparse
-try:
-    import subprocess as cmds
-except ImportError as ex:
-    import subprocess as cmds
+import subprocess as cmds
 from multiprocessing.dummy import Pool as ThreadPool
 from multiprocessing import cpu_count
 import six

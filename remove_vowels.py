@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Remove vowels from words"""
 
 # https://stackoverflow.com/questions/23176001/remove-vowels-from-a-string

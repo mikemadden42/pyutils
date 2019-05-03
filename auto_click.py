@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Automote mouse clicks"""
 
 # Kudos to Michael Sexton for the initial script.

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import lookup
 
@@ -10,4 +10,4 @@ def test_mst():
 
 def test_wustl():
     result = lookup.find('www.wustl.edu')
-    assert result == ('www.wustl.edu', '128.252.114.30')
+    assert result == ('www.wustl.edu', '128.252.160.5')
