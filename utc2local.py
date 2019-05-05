@@ -13,9 +13,9 @@ def utc_local():
     """Convert UTC to local time."""
     utc = datetime.now(tzutc())
     local = utc.astimezone(tzlocal())
-    six.print_('UTC:  ', utc)
-    six.print_('Local:', local)
+    six.print_("UTC:  ", utc)
+    six.print_("Local:", local)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     utc_local()

@@ -10,5 +10,5 @@ def swap_info():
     six.print_(psutil.swap_memory())
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     swap_info()

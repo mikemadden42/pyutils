@@ -16,14 +16,14 @@ def fizzbuzz():
     """Prints the integers from 1 to 100 (inclusive)."""
     for i in range(1, 101):
         if i % 15 == 0:
-            six.print_('FizzBuzz')
+            six.print_("FizzBuzz")
         elif i % 3 == 0:
-            six.print_('Fizz')
+            six.print_("Fizz")
         elif i % 5 == 0:
-            six.print_('Buzz')
+            six.print_("Buzz")
         else:
             six.print_(i)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     fizzbuzz()

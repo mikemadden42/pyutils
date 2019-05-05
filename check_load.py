@@ -10,23 +10,22 @@ import six
 
 def mail_alert(load):
     """Email alert if load is high."""
-    subject = 'load on %s -> %.2f' % (platform.node(), load)
-    sender = 'from@fastmail.com'
-    receivers = 'to@fastmail.com'
+    subject = "load on %s -> %.2f" % (platform.node(), load)
+    sender = "from@fastmail.com"
+    receivers = "to@fastmail.com"
 
-    message = ('Subject: %s\r\nFrom: %s\r\nTo: %s\r\n\r\n' %
-               (subject, sender, receivers))
+    message = "Subject: %s\r\nFrom: %s\r\nTo: %s\r\n\r\n" % (subject, sender, receivers)
     try:
-        server = smtplib.SMTP('localhost')
+        server = smtplib.SMTP("localhost")
         server.sendmail(sender, receivers, message)
-        six.print_('Successfully sent email')
+        six.print_("Successfully sent email")
     except smtplib.SMTPException:
-        six.print_('Error: unable to send email')
+        six.print_("Error: unable to send email")
 
 
 def check_load():
     """Check load."""
-    with open('/proc/loadavg') as infile:
+    with open("/proc/loadavg") as infile:
         for line in infile:
             stats = line.split()
             load_avg = float(stats[2])
@@ -34,5 +33,5 @@ def check_load():
                 mail_alert(load_avg)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     check_load()

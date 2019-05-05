@@ -12,8 +12,15 @@ def remove_vowels(text):
     return re.sub("[aeiou]+", "", text)
 
 
-if __name__ == '__main__':
-    BEATS = ('auditbeat', 'filebeat', 'heartbeat', 'journalbeat', 'metricbeat',
-             'packetbeat', 'winlogbeat')
+if __name__ == "__main__":
+    BEATS = (
+        "auditbeat",
+        "filebeat",
+        "heartbeat",
+        "journalbeat",
+        "metricbeat",
+        "packetbeat",
+        "winlogbeat",
+    )
     for beat in BEATS:
         six.print_(remove_vowels(beat))

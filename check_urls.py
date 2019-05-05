@@ -30,7 +30,7 @@ def get(url):
 def check():
     """Get the status of a set of urls."""
 
-    infile = open('urls.txt', 'r')
+    infile = open("urls.txt", "r")
     urls = [x.strip() for x in infile.readlines()]
 
     pool = ThreadPool(cpu_count() * 4)
@@ -39,13 +39,13 @@ def check():
     for result in results:
         if result is not None:
             if result.status_code != 200:
-                six.print_('Invalid status code', result.url)
+                six.print_("Invalid status code", result.url)
             if not result.content:
-                six.print_('Invalid content length', result.url)
+                six.print_("Invalid content length", result.url)
 
     pool.close()
     pool.join()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     check()

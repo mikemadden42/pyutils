@@ -11,17 +11,18 @@ import six
 
 def main():
     """sqlite demo"""
-    address = psutil.net_if_addrs()['en0'][0].address
+    address = psutil.net_if_addrs()["en0"][0].address
     date = str(datetime.datetime.now())
     host = platform.node()
-    mac = psutil.net_if_addrs()['en0'][1].address
+    mac = psutil.net_if_addrs()["en0"][1].address
 
     conn = sqlite3.connect("network.sqlite")
     cursor = conn.cursor()
 
     sql_create = "CREATE TABLE outages (date text, device text, ip text, mac text)"
     sql_insert = "INSERT INTO outages VALUES ('{}', '{}', '{}', '{}')".format(
-        date, host, address, mac)
+        date, host, address, mac
+    )
 
     try:
         cursor.execute(sql_create)
@@ -34,5 +35,5 @@ def main():
     conn.close()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

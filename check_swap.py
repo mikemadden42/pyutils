@@ -9,14 +9,13 @@ import six
 
 def mail_alert(percent):
     """Send alert if swap is high."""
-    subject = 'swap on %s - %.2f used' % (platform.node(), percent)
-    sender = 'from@fastmail.com'
-    receivers = 'to@fastmail.com'
+    subject = "swap on %s - %.2f used" % (platform.node(), percent)
+    sender = "from@fastmail.com"
+    receivers = "to@fastmail.com"
 
-    message = ("Subject: %s\r\nFrom: %s\r\nTo: %s\r\n\r\n" %
-               (subject, sender, receivers))
+    message = "Subject: %s\r\nFrom: %s\r\nTo: %s\r\n\r\n" % (subject, sender, receivers)
     try:
-        server = smtplib.SMTP('localhost')
+        server = smtplib.SMTP("localhost")
         server.sendmail(sender, receivers, message)
         six.print_("Successfully sent email")
     except smtplib.SMTPException:
@@ -25,7 +24,7 @@ def mail_alert(percent):
 
 def check_swap():
     """Check swap usage."""
-    with open('/proc/swaps') as infile:
+    with open("/proc/swaps") as infile:
         next(infile)
         for line in infile:
             stats = line.split()
@@ -36,5 +35,5 @@ def check_swap():
                 mail_alert(percent_used)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     check_swap()

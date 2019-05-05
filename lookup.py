@@ -20,7 +20,7 @@ def find(host):
 def lookup():
     """Perform a DNS lookup for a set of hosts."""
 
-    infile = open('hosts.txt', 'r')
+    infile = open("hosts.txt", "r")
     urls = [x.strip() for x in infile.readlines()]
 
     pool = ThreadPool(cpu_count() * 4)
@@ -34,5 +34,5 @@ def lookup():
     pool.join()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     lookup()

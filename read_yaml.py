@@ -12,14 +12,14 @@ import six
 def read_yaml():
     """Read & print YAML."""
 
-    with open('config.yml', 'r') as ymlfile:
+    with open("config.yml", "r") as ymlfile:
         cfg = yaml.load(ymlfile)
 
         for section in cfg:
             six.print_(section)
-            six.print_(cfg['mysql'])
-            six.print_(cfg['other'])
+            six.print_(cfg["mysql"])
+            six.print_(cfg["other"])
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     read_yaml()

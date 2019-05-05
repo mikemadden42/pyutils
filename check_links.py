@@ -15,6 +15,6 @@ def check_links(directory):
             six.print_(full_path)
 
 
-if __name__ == '__main__':
-    check_links('/etc/alternatives')
-    check_links('/usr/bin')
+if __name__ == "__main__":
+    check_links("/etc/alternatives")
+    check_links("/usr/bin")

@@ -13,9 +13,8 @@ def boot():
     """Get the boot time"""
 
     bootup = psutil.boot_time()
-    time_stamp = \
-        datetime.datetime.fromtimestamp(bootup).strftime('%Y-%m-%d %H:%M:%S')
-    six.print_('Boot time: %s' % time_stamp)
+    time_stamp = datetime.datetime.fromtimestamp(bootup).strftime("%Y-%m-%d %H:%M:%S")
+    six.print_("Boot time: %s" % time_stamp)
 
 
 # http://stackoverflow.com/questions/1006289/how-to-find-out-the-number-of-cpus-using-python
@@ -24,10 +23,10 @@ def boot():
 def cpus():
     """Get the number of cpus"""
 
-    six.print_('Total CPUs: %d' % multiprocessing.cpu_count())
+    six.print_("Total CPUs: %d" % multiprocessing.cpu_count())
     try:
-        six.print_('Physical CPUs: %d' % psutil.cpu_count(logical=False))
-        six.print_('Logical CPUs: %d' % psutil.cpu_count())
+        six.print_("Physical CPUs: %d" % psutil.cpu_count(logical=False))
+        six.print_("Logical CPUs: %d" % psutil.cpu_count())
     except AttributeError:
         pass
 
@@ -39,10 +38,10 @@ def memory():
     """Get the amount of sytem memory"""
 
     mem = psutil.virtual_memory()
-    six.print_('Memory: %d' % mem.total)
+    six.print_("Memory: %d" % mem.total)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     boot()
     cpus()
     memory()

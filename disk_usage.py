@@ -13,16 +13,16 @@ def disk_partitions(all_mounts=False):
     """Return all mountd partitions as a nameduple.
     If all_mounts == False return physical partitions only."""
     phydevs = []
-    disk_ntuple = namedtuple('partition', 'device mountpoint fstype')
-    fsys = open('/proc/filesystems', 'r')
+    disk_ntuple = namedtuple("partition", "device mountpoint fstype")
+    fsys = open("/proc/filesystems", "r")
     for line in fsys:
-        if not line.startswith('nodev'):
+        if not line.startswith("nodev"):
             phydevs.append(line.strip())
 
     retlist = []
-    mtab = open('/etc/mtab', 'r')
+    mtab = open("/etc/mtab", "r")
     for line in mtab:
-        if not all_mounts and line.startswith('none'):
+        if not all_mounts and line.startswith("none"):
             continue
         fields = line.split()
         device = fields[0]
@@ -30,8 +30,8 @@ def disk_partitions(all_mounts=False):
         fstype = fields[2]
         if not all_mounts and fstype not in phydevs:
             continue
-        if device == 'none':
-            device = ''
+        if device == "none":
+            device = ""
         ntuple = disk_ntuple(device, mountpoint, fstype)
         retlist.append(ntuple)
     return retlist
@@ -40,10 +40,10 @@ def disk_partitions(all_mounts=False):
 def disk_usage(path):
     """Return disk usage associated with path."""
     stats = os.statvfs(path)
-    free = (stats.f_bavail * stats.f_frsize)
-    total = (stats.f_blocks * stats.f_frsize)
+    free = stats.f_bavail * stats.f_frsize
+    total = stats.f_blocks * stats.f_frsize
     used = (stats.f_blocks - stats.f_bfree) * stats.f_frsize
-    usage_ntuple = namedtuple('usage', 'total used free percent')
+    usage_ntuple = namedtuple("usage", "total used free percent")
     try:
         percent = (float(used) / total) * 100
     except ZeroDivisionError:
@@ -54,7 +54,7 @@ def disk_usage(path):
     return usage_ntuple(total, used, free, round(percent, 1))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     for part in disk_partitions():
         six.print_(part)
-        six.print_('    %s\n' % str(disk_usage(part.mountpoint)))
+        six.print_("    %s\n" % str(disk_usage(part.mountpoint)))

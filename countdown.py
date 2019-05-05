@@ -13,7 +13,7 @@ def diff_dates(date1, date2):
     return abs(date2 - date1).days
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     START_DATE = datetime.date(2019, 4, 8)
     NOW = datetime.datetime.now()
     END_DATE = datetime.date(NOW.year, NOW.month, NOW.day)

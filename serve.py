@@ -13,8 +13,7 @@ from six.moves import SimpleHTTPServer
 from six.moves import socketserver
 
 
-class ThreadingSimpleServer(socketserver.ThreadingMixIn,
-                            BaseHTTPServer.HTTPServer):
+class ThreadingSimpleServer(socketserver.ThreadingMixIn, BaseHTTPServer.HTTPServer):
     """Simple HTTP server"""
 
 
@@ -26,12 +25,11 @@ else:
 if sys.argv[2:]:
     os.chdir(sys.argv[2])
 
-SERVER = ThreadingSimpleServer(('', PORT),
-                               SimpleHTTPServer.SimpleHTTPRequestHandler)
+SERVER = ThreadingSimpleServer(("", PORT), SimpleHTTPServer.SimpleHTTPRequestHandler)
 
 try:
     while 1:
         sys.stdout.flush()
         SERVER.handle_request()
 except KeyboardInterrupt:
-    six.print_('Finished')
+    six.print_("Finished")

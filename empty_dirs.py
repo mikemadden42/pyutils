@@ -7,7 +7,7 @@ import os
 import six
 
 
-def empty_dirs(root_dir='.'):
+def empty_dirs(root_dir="."):
     """Find empty directories."""
     six.print_(root_dir)
     for dirpath, dirs, files in os.walk(root_dir):
@@ -15,6 +15,6 @@ def empty_dirs(root_dir='.'):
             yield dirpath
 
 
-if __name__ == '__main__':
-    six.print_(list(empty_dirs('/tmp')))
-    six.print_(list(empty_dirs('/var/tmp')))
+if __name__ == "__main__":
+    six.print_(list(empty_dirs("/tmp")))
+    six.print_(list(empty_dirs("/var/tmp")))

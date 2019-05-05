@@ -19,16 +19,16 @@ def split_dir(directory):
     i = 0
 
     while i <= batches:
-        os.mkdir(directory + '/' + str(i))
+        os.mkdir(directory + "/" + str(i))
         start = i * 100
         end = i * 100 + 100
         part = files[start:end]
 
         for part_file in part:
-            shutil.move(directory + '/' + part_file, directory + '/' + str(i))
+            shutil.move(directory + "/" + part_file, directory + "/" + str(i))
 
         i += 1
 
 
-if __name__ == '__main__':
-    split_dir('dir1')
+if __name__ == "__main__":
+    split_dir("dir1")

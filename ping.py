@@ -11,7 +11,7 @@ import six
 def find(host):
     """Perform a ping for a given host."""
 
-    cmd = 'ping -w 1 -q ' + host
+    cmd = "ping -w 1 -q " + host
     (status, text) = cmds.getstatusoutput(cmd)
     return (status, host, text)
 
@@ -19,7 +19,7 @@ def find(host):
 def ping(hosts):
     """Perform a ping for a set of hosts."""
 
-    infile = open(hosts, 'r')
+    infile = open(hosts, "r")
     hosts = [x.strip() for x in infile.readlines()]
 
     pool = ThreadPool(cpu_count() * 4)
@@ -33,8 +33,8 @@ def ping(hosts):
     pool.join()
 
 
-if __name__ == '__main__':
-    PARSER = argparse.ArgumentParser(description='ping a set of hosts')
-    PARSER.add_argument('-f', '--file', help='hosts file', required=True)
+if __name__ == "__main__":
+    PARSER = argparse.ArgumentParser(description="ping a set of hosts")
+    PARSER.add_argument("-f", "--file", help="hosts file", required=True)
     ARGS = vars(PARSER.parse_args())
-    ping(ARGS['file'])
+    ping(ARGS["file"])

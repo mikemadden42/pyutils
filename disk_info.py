@@ -13,5 +13,5 @@ def disk_info():
         six.print_(mount, percent)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     disk_info()

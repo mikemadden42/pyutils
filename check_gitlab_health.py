@@ -9,12 +9,12 @@ import six
 def check_shell(logfile):
     """Scan the gitlab nginx logs for any health issues."""
     warnings = defaultdict(int)
-    six.print_('ERRORS IN %s:' % (logfile))
+    six.print_("ERRORS IN %s:" % (logfile))
     with open(logfile) as infile:
         for line in infile:
             line = line.rstrip(os.linesep)
-            if line.startswith('W, '):
-                warning = line.split('WARN -- : ')[1]
+            if line.startswith("W, "):
+                warning = line.split("WARN -- : ")[1]
                 warnings[warning] += 1
 
     for key, val in list(warnings.items()):
@@ -24,11 +24,11 @@ def check_shell(logfile):
 
 def check_nginx(logfile):
     """Scan the gitlab nginx logs for any health issues."""
-    six.print_('ERRORS IN %s:' % (logfile))
+    six.print_("ERRORS IN %s:" % (logfile))
     with open(logfile) as infile:
         six.print_(infile.read())
 
 
-if __name__ == '__main__':
-    check_shell('/var/log/gitlab/gitlab-shell/gitlab-shell.log')
-    check_nginx('/var/log/gitlab/nginx/gitlab_error.log')
+if __name__ == "__main__":
+    check_shell("/var/log/gitlab/gitlab-shell/gitlab-shell.log")
+    check_nginx("/var/log/gitlab/nginx/gitlab_error.log")

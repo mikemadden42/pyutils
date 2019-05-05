@@ -18,10 +18,10 @@ AGENTS = {}
 def visitors():
     """Get the stats for an Apache access log."""
 
-    with open('access.log', 'r') as log:
+    with open("access.log", "r") as log:
         for line in log:
             line = line.rstrip(os.linesep)
-            stats = line.split('^')
+            stats = line.split("^")
             IPS[stats[3]] = IPS.setdefault(stats[3], 0) + 1
             URLS[stats[8]] = URLS.setdefault(stats[8], 0) + 1
             AGENTS[stats[9]] = AGENTS.setdefault(stats[9], 0) + 1
@@ -33,5 +33,5 @@ def visitors():
         six.print_(OrderedDict(sorted(list(URLS.items()), key=lambda t: t[1])))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     visitors()

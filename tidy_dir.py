@@ -22,5 +22,5 @@ def tidy_dir(directory):
         shutil.move(filename, first_letter)
 
 
-if __name__ == '__main__':
-    tidy_dir('dvds')
+if __name__ == "__main__":
+    tidy_dir("dvds")
