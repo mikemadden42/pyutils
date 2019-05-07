@@ -14,11 +14,11 @@ $ pip install --upgrade Jinja2 PyYAML nose python-dateutil psutil pytest request
 Format & lint these scripts:
 
 ```bash
-$ pip install --upgrade flake8 pylint yapf
+$ pip install --upgrade black flake8 pylint
 ```
 
 ```bash
 $ flake8 FILE.py
 $ pylint FILE.py
-$ yapf FILE.py
+$ black FILE.py
 ```
