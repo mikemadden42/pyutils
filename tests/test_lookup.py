@@ -18,6 +18,6 @@ def test_umsl():
     assert result == ("www.umsl.edu", "134.124.1.234")
 
 
-def test_slu():
-    result = lookup.find("www.slu.edu")
-    assert result == ("www.slu.edu", "165.134.154.195")
+def test_google_dns():
+    result = lookup.find("google-public-dns-a.google.com.")
+    assert result == ("google-public-dns-a.google.com.", "8.8.8.8")
