@@ -1,6 +1,8 @@
 # pyutils
 Python utility scripts
 
+[![CircleCI](https://circleci.com/gh/mikemadden42/pyutils.svg?style=svg)](https://circleci.com/gh/mikemadden42/pyutils)
+
 ## Prerequisites
 These scripts rely on the a few external libraries.
 

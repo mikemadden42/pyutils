@@ -20,4 +20,4 @@ def test_umsl():
 
 def test_slu():
     result = lookup.find("www.slu.edu")
-    assert result == ("www.slu.edu", "165.134.206.195")
+    assert result == ("www.slu.edu", "165.134.154.195")
