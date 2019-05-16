@@ -108,3 +108,5 @@ venv.bak/
 *.bz2
 *.xz
 *.zip
+
+test.html
