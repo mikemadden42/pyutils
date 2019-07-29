@@ -21,6 +21,7 @@ def boot():
 
 
 def get_cores():
+    """Get the number of CPU cores"""
     return multiprocessing.cpu_count()
 
 
@@ -36,6 +37,7 @@ def cpus():
 
 
 def get_memory():
+    """Get the amount of memory"""
     return psutil.virtual_memory().total
 
 
