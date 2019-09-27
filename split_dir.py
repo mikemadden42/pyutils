@@ -10,19 +10,19 @@ import os
 import shutil
 
 
-def split_dir(directory, n):
+def split_dir(directory, batch_size):
     """Split a large directory into smaller directories"""
 
     files = os.listdir(directory)
     size = len(files)
 
-    batches = int(size / n)
+    batches = int(size / batch_size)
     i = 0
 
     while i <= batches:
         os.mkdir(directory + "/" + str(i))
-        start = i * n
-        end = i * n + n
+        start = i * batch_size
+        end = i * batch_size + batch_size
         part = files[start:end]
 
         for part_file in part:

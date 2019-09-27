@@ -3,11 +3,16 @@
 
 import os
 from collections import defaultdict
+import sys
 import six
 
 
 def check_shell(logfile):
     """Scan the gitlab nginx logs for any health issues."""
+    if not os.path.exists(logfile):
+        six.print_(logfile, "does not exist")
+        sys.exit()
+
     warnings = defaultdict(int)
     six.print_("ERRORS IN %s:" % (logfile))
     with open(logfile) as infile:

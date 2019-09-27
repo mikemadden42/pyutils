@@ -16,5 +16,4 @@ def check_links(directory):
 
 
 if __name__ == "__main__":
-    check_links("/etc/alternatives")
     check_links("/usr/bin")
