@@ -12,9 +12,9 @@ def check_socket(host, port):
     with closing(socket.socket(socket.AF_INET, socket.SOCK_STREAM)) as sock:
         sock.settimeout(4)
         if sock.connect_ex((host, port)) == 0:
-            print("Port", port, "is open")
+            print("Port", port, "is open on", host)
         else:
-            print("Port", port, "is not open")
+            print("Port", port, "is not open on", host)
 
 
 check_socket("localhost", 22)
