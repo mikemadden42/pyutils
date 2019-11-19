@@ -11,7 +11,6 @@ import six
 
 def boot():
     """Get the boot time"""
-
     bootup = psutil.boot_time()
     time_stamp = datetime.datetime.fromtimestamp(bootup).strftime("%Y-%m-%d %H:%M:%S")
     six.print_("Boot time: %s" % time_stamp)
@@ -27,9 +26,12 @@ def get_cores():
 
 def cpus():
     """Get the number of cpus"""
-
     six.print_("Total CPUs: %d" % get_cores())
+    six.print_("CPU current freq: %d Mhz" % psutil.cpu_freq().current)
+    six.print_("CPU min freq: %d Mhz" % psutil.cpu_freq().min)
+    six.print_("CPU max freq: %d Mhz" % psutil.cpu_freq().max)
     try:
+        six.print_("Load averages: %f %f %f" % psutil.getloadavg())
         six.print_("Physical CPUs: %d" % psutil.cpu_count(logical=False))
         six.print_("Logical CPUs: %d" % psutil.cpu_count())
     except AttributeError:
@@ -46,11 +48,21 @@ def get_memory():
 
 def memory():
     """Get the amount of sytem memory"""
-
     six.print_("Memory: %d" % get_memory())
+
+
+def disks():
+    """Get the amount of disk space"""
+    parts = psutil.disk_partitions()
+    for part in parts:
+        six.print_(
+            "Mount: %s %f%% full"
+            % (part.mountpoint, psutil.disk_usage(part.mountpoint).percent)
+        )
 
 
 if __name__ == "__main__":
     boot()
     cpus()
     memory()
+    disks()
