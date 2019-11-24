@@ -16,11 +16,6 @@ def elastic_check(server):
     print(j["status"])
 
 
-def email_alert(recipient, subject, body):
-    """send email alert"""
-    print(recipient, subject, body)
-
-
 if __name__ == "__main__":
     PARSER = argparse.ArgumentParser(description="check elastic cluster")
     PARSER.add_argument("-s", "--server", help="elastic server", required=True)
