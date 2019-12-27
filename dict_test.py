@@ -2,6 +2,7 @@
 """Test various dictionary sorts"""
 
 from collections import OrderedDict
+
 import six
 
 

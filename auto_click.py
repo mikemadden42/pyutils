@@ -7,8 +7,9 @@
 # https://unixpapa.com/js/testmouse.html
 
 import time
-from pynput.mouse import Button, Controller
+
 import six
+from pynput.mouse import Button, Controller
 
 
 def main():

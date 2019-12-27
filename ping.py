@@ -3,8 +3,9 @@
 
 import argparse
 import subprocess as cmds
-from multiprocessing.dummy import Pool as ThreadPool
 from multiprocessing import cpu_count
+from multiprocessing.dummy import Pool as ThreadPool
+
 import six
 
 

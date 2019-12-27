@@ -2,6 +2,7 @@
 """Check load."""
 
 import os
+
 import six
 
 

@@ -2,8 +2,9 @@
 """Print recent quakes."""
 
 import time
-import six
+
 import requests
+import six
 
 
 def quakes():

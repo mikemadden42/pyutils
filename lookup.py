@@ -2,8 +2,9 @@
 """Perform a DNS lookup for a set of hosts."""
 
 import socket
-from multiprocessing.dummy import Pool as ThreadPool
 from multiprocessing import cpu_count
+from multiprocessing.dummy import Pool as ThreadPool
+
 import six
 
 

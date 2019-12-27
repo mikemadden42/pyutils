@@ -2,6 +2,7 @@
 """Check URLs with a JSON endpoint"""
 
 import os
+
 import requests
 import six
 

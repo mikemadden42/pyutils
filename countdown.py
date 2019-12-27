@@ -4,6 +4,7 @@
 """Get the difference between two dates"""
 
 import datetime
+
 import six
 
 

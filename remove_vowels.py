@@ -4,6 +4,7 @@
 # https://stackoverflow.com/questions/23176001/remove-vowels-from-a-string
 
 import re
+
 import six
 
 

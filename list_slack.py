@@ -5,6 +5,7 @@
 # https://api.slack.com/methods
 
 import os
+
 import six
 from slacker import Slacker
 

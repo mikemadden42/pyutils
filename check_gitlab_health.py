@@ -2,8 +2,9 @@
 """Scan the gitlab logs for any health issues."""
 
 import os
-from collections import defaultdict
 import sys
+from collections import defaultdict
+
 import six
 
 

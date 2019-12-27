@@ -3,8 +3,8 @@
 Demo script for reading YAML.
 """
 
-import yaml
 import six
+import yaml
 
 # http://martin-thoma.com/configuration-files-in-python/
 

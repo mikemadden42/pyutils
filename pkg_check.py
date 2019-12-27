@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Check if packages exist for Raspbian."""
 
-from collections import defaultdict
 import gzip
 import os
+from collections import defaultdict
+
 import six
 import six.moves
 

@@ -4,6 +4,7 @@
 """jinja2 demo script"""
 
 import os
+
 import jinja2
 
 TEMPLATE_LOADER = jinja2.FileSystemLoader(searchpath="/")

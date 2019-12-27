@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Summarize tickets by user"""
 
-from collections import defaultdict
 import argparse
 import csv
+from collections import defaultdict
+
 import six
 
 

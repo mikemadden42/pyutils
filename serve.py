@@ -6,11 +6,9 @@
 
 import os
 import sys
-import six
 
-from six.moves import BaseHTTPServer
-from six.moves import SimpleHTTPServer
-from six.moves import socketserver
+import six
+from six.moves import BaseHTTPServer, SimpleHTTPServer, socketserver
 
 
 class ThreadingSimpleServer(socketserver.ThreadingMixIn, BaseHTTPServer.HTTPServer):

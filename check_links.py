@@ -2,6 +2,7 @@
 """Find broken links in a directory"""
 
 import os
+
 import six
 
 

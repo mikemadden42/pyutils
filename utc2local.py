@@ -4,9 +4,9 @@
 # Based on: https://gist.github.com/dmdavis/9670681
 
 from datetime import datetime
-from dateutil.tz import tzutc, tzlocal
 
 import six
+from dateutil.tz import tzlocal, tzutc
 
 
 def utc_local():

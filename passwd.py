@@ -5,6 +5,7 @@ Demo script for accepting & validating passwords.
 
 import getpass
 import hashlib
+
 import six
 
 # https://pymotw.com/2/getpass/

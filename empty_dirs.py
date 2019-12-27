@@ -4,6 +4,7 @@
 # http://stackoverflow.com/questions/26774892/how-to-find-recursively-empty-directories-in-python
 
 import os
+
 import six
 
 
