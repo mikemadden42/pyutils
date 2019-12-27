@@ -3,6 +3,7 @@
 
 import gzip
 import os
+import sys
 from collections import defaultdict
 
 import six
@@ -15,9 +16,13 @@ def check(pkgs):
     required_pkgs = "required_pkgs.txt"
     url = "http://tinyurl.com/yaljokp8"
 
-    if not os.path.exists(pkgs):
-        six.print_("Downloading package list...")
-        six.moves.urllib.request.urlretrieve(url, pkgs)
+    if url.lower().startswith("http"):
+        if not os.path.exists(pkgs):
+            six.print_("Downloading package list...")
+            six.moves.urllib.request.urlretrieve(url, pkgs)
+    else:
+        print(f"Invalid URL: {url}")
+        sys.exit(1)
 
     with gzip.open(pkgs, "rt") as pkgfile:
         for line in pkgfile:

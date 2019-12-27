@@ -13,7 +13,7 @@ def read_yaml():
     """Read & print YAML."""
 
     with open("config.yml", "r") as ymlfile:
-        cfg = yaml.load(ymlfile)
+        cfg = yaml.safe_load(ymlfile)
 
         for section in cfg:
             six.print_(section)

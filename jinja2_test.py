@@ -8,7 +8,7 @@ import os
 import jinja2
 
 TEMPLATE_LOADER = jinja2.FileSystemLoader(searchpath="/")
-TEMPLATE_ENV = jinja2.Environment(loader=TEMPLATE_LOADER)
+TEMPLATE_ENV = jinja2.Environment(loader=TEMPLATE_LOADER, autoescape=True)
 
 TEMPLATE_FILE = "%s/test.jinja" % os.getcwd()
 TEMPLATE = TEMPLATE_ENV.get_template(TEMPLATE_FILE)

@@ -12,7 +12,7 @@ from requests.auth import HTTPBasicAuth
 def elastic_check(server):
     """check elastic"""
     url = "https://" + server + ":9200/_cluster/health"
-    req = requests.get(url, auth=HTTPBasicAuth("elastic", "********"), verify=False)
+    req = requests.get(url, auth=HTTPBasicAuth("elastic", "********"))
     j = req.json()
     print(j["status"])
 
