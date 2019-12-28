@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Compare two directories for conflicts."""
 
+import argparse
 import filecmp
 import os
 
@@ -19,4 +20,8 @@ def compare(dir1, dir2):
 
 
 if __name__ == "__main__":
-    compare("/etc", "/etc")
+    PARSER = argparse.ArgumentParser(description="ping a set of hosts")
+    PARSER.add_argument("-f", "--first", help="first directory", required=True)
+    PARSER.add_argument("-s", "--second", help="second directory", required=True)
+    ARGS = vars(PARSER.parse_args())
+    compare(ARGS["first"], ARGS["second"])
