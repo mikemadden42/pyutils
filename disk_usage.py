@@ -4,6 +4,7 @@
 # Based on https://gist.github.com/xamox/4711286
 
 import os
+import sys
 from collections import namedtuple
 
 import six
@@ -14,10 +15,14 @@ def disk_partitions(all_mounts=False):
     If all_mounts == False return physical partitions only."""
     phydevs = []
     disk_ntuple = namedtuple("partition", "device mountpoint fstype")
-    fsys = open("/proc/filesystems", "r")
-    for line in fsys:
-        if not line.startswith("nodev"):
-            phydevs.append(line.strip())
+    try:
+        fsys = open("/proc/filesystems", "r")
+        for line in fsys:
+            if not line.startswith("nodev"):
+                phydevs.append(line.strip())
+    except IOError:
+        print("File", "/proc/filesystems", "not found")
+        sys.exit(os.EX_OSFILE)
 
     retlist = []
     mtab = open("/etc/mtab", "r")

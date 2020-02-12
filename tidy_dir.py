@@ -12,14 +12,17 @@ import shutil
 def tidy_dir(directory):
     """Organizes a large directory with many files."""
 
-    dir_list = os.listdir(directory)
-    os.chdir(directory)
+    try:
+        dir_list = os.listdir(directory)
+        os.chdir(directory)
 
-    for filename in dir_list:
-        first_letter = filename[0].lower()
-        if not os.path.isdir(first_letter):
-            os.mkdir(first_letter)
-        shutil.move(filename, first_letter)
+        for filename in dir_list:
+            first_letter = filename[0].lower()
+            if not os.path.isdir(first_letter):
+                os.mkdir(first_letter)
+            shutil.move(filename, first_letter)
+    except IOError:
+        print("Directory", directory, "not found")
 
 
 if __name__ == "__main__":
