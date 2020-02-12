@@ -14,7 +14,7 @@ def check(pkgs):
     """Check if packages exist for Raspbian."""
     packages = defaultdict(int)
     required_pkgs = "required_pkgs.txt"
-    url = "http://tinyurl.com/yaljokp8"
+    url = "http://debian.uchicago.edu/debian/dists/buster/main/binary-amd64/Packages.gz"
 
     if url.lower().startswith("http"):
         if not os.path.exists(pkgs):

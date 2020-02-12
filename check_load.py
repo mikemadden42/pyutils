@@ -25,12 +25,15 @@ def mail_alert(load):
 
 def check_load():
     """Check load."""
-    with open("/proc/loadavg") as infile:
-        for line in infile:
-            stats = line.split()
-            load_avg = float(stats[2])
-            if load_avg > multiprocessing.cpu_count():
-                mail_alert(load_avg)
+    try:
+        with open("/proc/loadavg") as infile:
+            for line in infile:
+                stats = line.split()
+                load_avg = float(stats[2])
+                if load_avg > multiprocessing.cpu_count():
+                    mail_alert(load_avg)
+    except IOError:
+        print("File", "/proc/loadavg", "not found")
 
 
 if __name__ == "__main__":

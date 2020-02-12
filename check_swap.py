@@ -24,15 +24,18 @@ def mail_alert(percent):
 
 def check_swap():
     """Check swap usage."""
-    with open("/proc/swaps") as infile:
-        next(infile)
-        for line in infile:
-            stats = line.split()
-            size = stats[2]
-            used = stats[3]
-            percent_used = float(used) / float(size)
-            if percent_used > 0.20:
-                mail_alert(percent_used)
+    try:
+        with open("/proc/swaps") as infile:
+            next(infile)
+            for line in infile:
+                stats = line.split()
+                size = stats[2]
+                used = stats[3]
+                percent_used = float(used) / float(size)
+                if percent_used > 0.20:
+                    mail_alert(percent_used)
+    except IOError:
+        print("File", "/proc/swaps", "not found")
 
 
 if __name__ == "__main__":
