@@ -7,16 +7,16 @@ import yaml
 def read_changelog():
     """Read interum changelog file."""
     with open(r"changelog.yml") as file:
-        prs = yaml.safe_load(file)
+        changelog = yaml.safe_load(file)
 
-        for pr in prs:
-            print(pr)
-            print("- author:", prs[pr]["meta"]["author"])
-            print("- description:", prs[pr]["meta"]["description"])
-            print("- hash:", prs[pr]["meta"]["hash"])
-            print("- url:", prs[pr]["meta"]["url"])
-            print("- tags:", prs[pr]["meta"]["tags"])
-            print("- changelog:", prs[pr]["changelog"])
+        for change in changelog:
+            print(change)
+            print("- author:", changelog[change]["meta"]["author"])
+            print("- description:", changelog[change]["meta"]["description"])
+            print("- hash:", changelog[change]["meta"]["hash"])
+            print("- url:", changelog[change]["meta"]["url"])
+            print("- tags:", changelog[change]["meta"]["tags"])
+            print("- changelog:", changelog[change]["changelog"])
 
 
 if __name__ == "__main__":

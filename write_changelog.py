@@ -45,7 +45,7 @@ def gen_changelog1():
     ]
 
     with open(r"changelog.yml", "w") as file:
-        documents = yaml.dump(dict_file, file)
+        yaml.dump(dict_file, file)
 
 
 # The following classes, functions originated on the following site.
@@ -106,7 +106,7 @@ def gen_changelog2():
     changelog["pr-3"]["meta"]["tags"] = ["backport"]
 
     with open(r"changelog.yml", "w") as file:
-        documents = yaml.dump(changelog.to_dict(), file)
+        yaml.dump(changelog.to_dict(), file)
 
 
 if __name__ == "__main__":
