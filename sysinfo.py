@@ -44,12 +44,27 @@ def get_memory():
     return psutil.virtual_memory().total
 
 
+# https://stackoverflow.com/questions/12523586/python-format-size-application-converting-b-to-kb-mb-gb-tb/52379087
+SIZE_UNITS = ["B", "KB", "MB", "GB", "TB", "PB"]
+
+
+def get_readable_file_size(size_in_bytes):
+    index = 0
+    while size_in_bytes >= 1024:
+        size_in_bytes /= 1024
+        index += 1
+    try:
+        return f"{size_in_bytes} {SIZE_UNITS[index]}"
+    except IndexError:
+        return "File too large"
+
+
 # http://stackoverflow.com/questions/22102999/get-total-physical-memory-from-python
 
 
 def memory():
     """Get the amount of sytem memory"""
-    six.print_("Memory: %d" % get_memory())
+    six.print_("Memory: %s" % get_readable_file_size(get_memory()))
 
 
 def disks():
