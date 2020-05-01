@@ -4,15 +4,13 @@
 import os
 import sys
 
-import six
-
 
 def hello():
     """Hello world function"""
     if os.name == "posix":
-        six.print_("Hello uid %s on %s." % (os.getuid(), sys.platform))
+        print(f"Hello uid {os.getuid()} on {sys.platform}.")
     else:
-        six.print_("Hello on %s." % (sys.platform))
+        print(f"Hello on {sys.platform}.")
 
 
 if __name__ == "__main__":
