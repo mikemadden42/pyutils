@@ -1,7 +1,7 @@
 pipeline {
     agent { docker { image 'python:3.8.2' } }
     stages {
-        stage('build') {
+        stage('info') {
             steps {
                 sh 'python --version'
             }
@@ -20,6 +20,22 @@ pipeline {
                     python3 -m venv venv
                     . venv/bin/activate
                     pip install -r requirements.txt
+                """
+            }
+            post{
+                success{
+                    echo "========build executed successfully========"
+                }
+                failure{
+                    echo "========build execution failed========"
+                }
+            }
+        }
+        stage('test') {
+            steps {
+                sh """
+                    . venv/bin/activate
+                    pytest --junitxml=test-reports/junit.xml -v
                 """
             }
             post{
