@@ -12,4 +12,4 @@ def test_cores():
 def test_memory():
     # Ensure there is at least 4 GB.
     result = sysinfo.get_memory()
-    assert result >= 4294967296
+    assert result >= 1073741824
