@@ -14,6 +14,23 @@ pipeline {
                 }
             }
         }
+        stage('setup') {
+            steps {
+                sh """
+                    python3 -m venv venv
+                    . venv/bin/activate
+                    pip install -r requirements.txt
+                """
+            }
+            post{
+                success{
+                    echo "========build executed successfully========"
+                }
+                failure{
+                    echo "========build execution failed========"
+                }
+            }
+        }
    }
     post{
         success{
