@@ -17,7 +17,7 @@ pipeline {
         stage('setup') {
             steps {
                 sh """
-                    python3 -m venv venv
+                    python -m venv venv
                     . venv/bin/activate
                     pip install -r requirements.txt
                 """
@@ -54,6 +54,9 @@ pipeline {
         }
         failure{
             echo "========pipeline execution failed========"
+        }
+        always{
+            junit "test-reports/junit.xml"
         }
     }
 }
