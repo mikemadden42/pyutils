@@ -6,7 +6,7 @@ import sysinfo
 def test_cores():
     # Ensure there is at least 2 cores.
     result = sysinfo.get_cores()
-    assert result >= 2
+    assert result >= 1
 
 
 def test_memory():
