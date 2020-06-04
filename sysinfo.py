@@ -49,6 +49,7 @@ SIZE_UNITS = ["B", "KB", "MB", "GB", "TB", "PB"]
 
 
 def get_readable_file_size(size_in_bytes):
+    """Get humable friendly size"""
     index = 0
     while size_in_bytes >= 1024:
         size_in_bytes /= 1024

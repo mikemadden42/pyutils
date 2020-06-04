@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write yml example"""
+"""Generate YAML changelog"""
 
 import yaml
 
@@ -53,11 +53,11 @@ def gen_changelog1():
 # https://stackoverflow.com/questions/6432605/any-yaml-libraries-in-python-that-support-dumping-of-long-strings-as-block-liter
 
 
-class folded_unicode(str):
+class FoldedUnicode(str):
     pass
 
 
-class literal_unicode(str):
+class LiteralUnicode(str):
     pass
 
 
@@ -69,8 +69,8 @@ def literal_unicode_representer(dumper, data):
     return dumper.represent_scalar("tag:yaml.org,2002:str", data, style="|")
 
 
-yaml.add_representer(folded_unicode, folded_unicode_representer)
-yaml.add_representer(literal_unicode, literal_unicode_representer)
+yaml.add_representer(FoldedUnicode, folded_unicode_representer)
+yaml.add_representer(LiteralUnicode, literal_unicode_representer)
 
 
 def gen_changelog2():
@@ -100,7 +100,7 @@ def gen_changelog2():
     changelog["pr-3"]["meta"][
         "url"
     ] = "https://github.com/mikemadden42/hello-changelog/pull/3"
-    changelog["pr-3"]["changelog"] = literal_unicode(
+    changelog["pr-3"]["changelog"] = LiteralUnicode(
         "break(packetbeat): add java example\nfix(functionbeat, journalbeat):hello java"
     )
     changelog["pr-3"]["meta"]["tags"] = ["backport"]
