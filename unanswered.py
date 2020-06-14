@@ -7,7 +7,8 @@ import requests
 def unanswered(page=1):
     """Show unanswered posts in discuss.elastic.co"""
     req = requests.get(
-        "https://discuss.elastic.co/c/beats/l/latest.json?page=" + str(page)
+        "https://discuss.elastic.co/c/elastic-stack/beats/l/latest.json?page="
+        + str(page)
     )
     print("========")
     for topic in req.json()["topic_list"]["topics"]:
