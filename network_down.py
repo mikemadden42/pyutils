@@ -4,6 +4,7 @@
 import datetime
 import platform
 import sqlite3
+import sys
 
 import psutil
 import six
@@ -11,7 +12,11 @@ import six
 
 def main():
     """sqlite demo"""
-    address = psutil.net_if_addrs()["en0"][0].address
+    try:
+        address = psutil.net_if_addrs()["en0"][0].address
+    except KeyError as error:
+        six.print_("Unable to find network interface", error)
+        sys.exit(1)
     date = str(datetime.datetime.now())
     host = platform.node()
     mac = psutil.net_if_addrs()["en0"][1].address
