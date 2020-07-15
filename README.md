@@ -33,4 +33,3 @@ Install all the needed libraries and tools:
 ```bash
 pip install -r requirements.txt
 ```
-
