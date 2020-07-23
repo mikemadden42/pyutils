@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """Hello world function"""
 
-import random
+import secrets
 
 
 def rand_int():
     """Generate int between 0 and 100."""
     while True:
-        yield random.randrange(100)
+        yield secrets.randbelow(100)
 
 
 def main():
