@@ -5,6 +5,7 @@ import gzip
 import os
 import sys
 from collections import defaultdict
+from urllib.parse import urlparse
 
 import six
 import six.moves
@@ -16,7 +17,8 @@ def check(pkgs):
     required_pkgs = "required_pkgs.txt"
     url = "http://debian.uchicago.edu/debian/dists/buster/main/binary-amd64/Packages.gz"
 
-    if url.lower().startswith("http"):
+    url_data = urlparse(url)
+    if not url_data.scheme.startswith("file"):
         if not os.path.exists(pkgs):
             six.print_("Downloading package list...")
             six.moves.urllib.request.urlretrieve(url, pkgs)
