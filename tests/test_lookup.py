@@ -5,7 +5,7 @@ import lookup
 
 def test_mst():
     result = lookup.find("www.mst.edu")
-    assert result == ("www.mst.edu", "131.151.247.32")
+    assert result == ("www.mst.edu", "131.151.247.20")
 
 
 def test_wustl():
