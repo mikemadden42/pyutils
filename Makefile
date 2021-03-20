@@ -9,7 +9,7 @@ run:
 
 freeze:
 	. venv/bin/activate; \
-	pip3 install --upgrade Jinja2 PyYAML boto boto3 nested_dict nose psutil pynput pytest pytest-xdist python-dateutil requests simplejson six slacker black flake8 pylint; \
+	pip3 install --upgrade Jinja2 PyYAML boto boto3 nested_dict nose psutil pynput pytest pytest-xdist python-dateutil requests simplejson six slacker urllib3 black flake8 pylint; \
 	pip3 freeze > requirements.txt; \
 
 format:
