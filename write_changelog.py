@@ -2,7 +2,6 @@
 """Generate YAML changelog"""
 
 import yaml
-
 from nested_dict import nested_dict
 
 

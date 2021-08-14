@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
-import pip
 from distutils.version import LooseVersion
+
+import pip
 
 # https://stackoverflow.com/questions/34578168/where-is-pip-cache-folder
 

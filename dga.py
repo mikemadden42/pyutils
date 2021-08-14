@@ -6,7 +6,7 @@ import datetime
 
 
 def generate_domain(year, month, day):
-    """ Generates a domain by considering the current date. """
+    """Generates a domain by considering the current date."""
     domain = ""
 
     for _ in range(32):

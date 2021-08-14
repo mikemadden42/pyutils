@@ -7,7 +7,7 @@ import time
 
 
 def thread_function(name):
-    """Threading example. """
+    """Threading example."""
     logging.info("Batter %s: up", name)
     time.sleep(2)
     logging.info("Batter %s: out", name)
