@@ -5,6 +5,10 @@
 # https://geekswipe.net/technology/computing/analyze-chromes-browsing-history-with-python/
 # https://pythonexamples.org/python-sqlite3-delete-all-rows-from-table/
 
+# History files are often in these locations on macOS:
+# $HOME/Library/Application Support/BraveSoftware/Brave-Browser/Default
+# $HOME/Library/Application Support/Google/Chrome/Default
+
 import sqlite3
 
 
@@ -19,7 +23,7 @@ def list_history():
         for url in urls:
             print(url)
     except sqlite3.OperationalError as err:
-        print("Ensure Chrome is not running:", err)
+        print("Error fetching history:", err)
     cursor.close()
     conn.close()
 
