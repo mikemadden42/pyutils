@@ -3,6 +3,7 @@
 
 import datetime
 import multiprocessing
+import os
 
 import psutil
 import six
@@ -32,9 +33,11 @@ def cpus():
         six.print_("Load averages: %f %f %f" % psutil.getloadavg())
         six.print_("Physical CPUs: %d" % psutil.cpu_count(logical=False))
         six.print_("Logical CPUs: %d" % psutil.cpu_count())
-        six.print_("CPU current freq: %d Mhz" % psutil.cpu_freq().current)
-        six.print_("CPU min freq: %d Mhz" % psutil.cpu_freq().min)
-        six.print_("CPU max freq: %d Mhz" % psutil.cpu_freq().max)
+        # Currently we cannot get the CPU frequency on Mac with Apple Silicon.
+        if os.uname.sysname != "darwin" and os.uname().machine != "arm64":
+            six.print_("CPU current freq: %d Mhz" % psutil.cpu_freq().current)
+            six.print_("CPU min freq: %d Mhz" % psutil.cpu_freq().min)
+            six.print_("CPU max freq: %d Mhz" % psutil.cpu_freq().max)
     except AttributeError:
         pass
 
