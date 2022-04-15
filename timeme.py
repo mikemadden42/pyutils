@@ -22,6 +22,7 @@ def timeit(method):
     return wrapper
 
 
+@timeit
 def hello():
     """Hello world function"""
     if os.name == "posix":
