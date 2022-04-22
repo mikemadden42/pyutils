@@ -32,7 +32,7 @@ def list_slack():
             if not user["deleted"]:
                 six.print_(user["id"], user["name"], user["is_admin"], user["is_owner"])
         six.print_()
-    except (KeyError) as ex:
+    except KeyError as ex:
         six.print_("Environment variable %s not set." % str(ex))
 
 

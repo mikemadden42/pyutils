@@ -15,7 +15,7 @@ def check_shell(logfile):
         sys.exit()
 
     warnings = defaultdict(int)
-    six.print_("ERRORS IN %s:" % (logfile))
+    six.print_("ERRORS IN %s:" % logfile)
     with open(logfile) as infile:
         for line in infile:
             line = line.rstrip(os.linesep)
@@ -30,7 +30,7 @@ def check_shell(logfile):
 
 def check_nginx(logfile):
     """Scan the gitlab nginx logs for any health issues."""
-    six.print_("ERRORS IN %s:" % (logfile))
+    six.print_("ERRORS IN %s:" % logfile)
     with open(logfile) as infile:
         six.print_(infile.read())
 

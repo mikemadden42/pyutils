@@ -14,7 +14,7 @@ def find(host):
 
     cmd = "ping -w 1 -q " + host
     (status, text) = cmds.getstatusoutput(cmd)
-    return (status, host, text)
+    return status, host, text
 
 
 def ping(hosts):

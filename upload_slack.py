@@ -17,13 +17,13 @@ def upload_slack(file_upload):
         token = os.environ["SLACK_TOKEN"]
         slack = Slacker(token)
 
-        # By default all newly-uploaded files are private and only visible to
+        # By default, all newly-uploaded files are private and only visible to
         # the owner. They become public once they are shared into a public
-        # channel (which can happen at upload time via the channels argument).
+        # channel (which can happen at upload time via the channel's argument).
         # obj = slack.files.upload(file_upload, channels='#general')
         obj = slack.files.upload(file_upload)
         six.print_(obj.successful, obj.body["file"]["channels"], obj.body["file"]["id"])
-    except (KeyError) as ex:
+    except KeyError as ex:
         six.print_("Environment variable %s not set." % str(ex))
 
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Post slack message."""
+"""Post Slack message."""
 
 # https://github.com/os/slacker
 # https://api.slack.com/methods
@@ -11,7 +11,7 @@ from slacker import Slacker
 
 
 def post_slack():
-    """Post slack message."""
+    """Post Slack message."""
     try:
         token = os.environ["SLACK_TOKEN"]
         slack = Slacker(token)
@@ -25,7 +25,7 @@ def post_slack():
         six.print_(
             obj.successful, obj.__dict__["body"]["channel"], obj.__dict__["body"]["ts"]
         )
-    except (KeyError) as ex:
+    except KeyError as ex:
         six.print_("Environment variable %s not set." % str(ex))
 
 

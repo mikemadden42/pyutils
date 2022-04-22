@@ -14,7 +14,7 @@ TEMPLATE_FILE = "%s/test.jinja" % os.getcwd()
 TEMPLATE = TEMPLATE_ENV.get_template(TEMPLATE_FILE)
 
 # Here we add a new input variable containing a list.
-# Its contents will be expanded in the HTML as a unordered list.
+# Its contents will be expanded in the HTML as an unordered list.
 
 FAVORITES = ["chocolates", "lunar eclipses", "rabbits"]
 

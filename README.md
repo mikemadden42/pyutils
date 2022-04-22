@@ -6,7 +6,7 @@ Python utility scripts
 
 ## Prerequisites
 
-These scripts rely on the a few external libraries.
+These scripts rely on a few external libraries.
 
 Install these with pip:
 
