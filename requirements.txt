@@ -9,6 +9,7 @@ certifi==2021.10.8; python_version >= "2.7" and python_full_version < "3.0.0" or
 charset-normalizer==2.0.12; python_full_version >= "3.6.0" and python_version >= "3"
 click==8.1.2; python_version >= "3.7" and python_full_version >= "3.6.2"
 colorama==0.4.4; sys_platform == "win32" and python_version >= "3.7" and python_full_version >= "3.6.2" and (python_version >= "3.7" and python_full_version < "3.0.0" and sys_platform == "win32" or sys_platform == "win32" and python_version >= "3.7" and python_full_version >= "3.5.0") and platform_system == "Windows"
+commonmark==0.9.1; python_full_version >= "3.6.3" and python_full_version < "4.0.0"
 dill==0.3.4; python_full_version >= "3.6.2"
 execnet==1.9.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 flake8==4.0.1; python_version >= "3.6"
@@ -33,6 +34,7 @@ psutil==5.9.0; (python_version >= "2.6" and python_full_version < "3.0.0") or (p
 py==1.11.0; python_version >= "3.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.7"
 pycodestyle==2.8.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 pyflakes==2.4.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.6"
+pygments==2.12.0; python_full_version >= "3.6.3" and python_full_version < "4.0.0" and python_version >= "3.6"
 pylint==2.13.7; python_full_version >= "3.6.2"
 pyparsing==3.0.8; python_full_version >= "3.6.8" and python_version >= "3.7"
 pytest-forked==1.4.0; python_version >= "3.6"
@@ -42,6 +44,7 @@ python-dateutil==2.8.2; (python_version >= "2.7" and python_full_version < "3.0.
 pytz==2022.1; python_version >= "3.8"
 pyyaml==6.0; python_version >= "3.6"
 requests==2.27.1; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.6.0")
+rich==12.3.0; python_full_version >= "3.6.3" and python_full_version < "4.0.0"
 s3transfer==0.5.2; python_version >= "3.6"
 simplejson==3.17.6; (python_version >= "2.5" and python_full_version < "3.0.0") or (python_full_version >= "3.3.0")
 six==1.16.0; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.3.0")
