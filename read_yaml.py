@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Demo script for reading YAML.
+Demo for reading YAML.
 """
 
 import six

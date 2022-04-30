@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Demo script for accepting & validating passwords.
+Demo for accepting & validating passwords.
 """
 
 import getpass

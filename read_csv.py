@@ -6,7 +6,7 @@ from rich import print
 
 
 def read_csv(filename):
-    with open("data.csv", mode="r") as csv_file:
+    with open(filename, mode="r") as csv_file:
         csv_reader = csv.DictReader(csv_file)
         line_count = 0
         for row in csv_reader:
