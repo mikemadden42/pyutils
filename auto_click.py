@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Automote mouse clicks"""
+"""Automate mouse clicks"""
 
 # Kudos to Michael Sexton for the initial script.
 
@@ -13,7 +13,7 @@ from pynput.mouse import Button, Controller
 
 
 def main():
-    """Automote mouse clicks"""
+    """Automate mouse clicks"""
     mouse = Controller()
 
     six.print_("GET READY!")

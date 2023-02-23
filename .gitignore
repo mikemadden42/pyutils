@@ -110,3 +110,7 @@ venv.bak/
 *.zip
 
 test.html
+
+*.tsv
+
+.idea/

@@ -5,7 +5,7 @@ import yaml
 
 
 def read_changelog():
-    """Read interum changelog file."""
+    """Read interim changelog file."""
     try:
         with open(r"changelog.yml") as file:
             changelog = yaml.safe_load(file)

@@ -8,14 +8,13 @@ from collections import defaultdict
 from urllib.parse import urlparse
 
 import six
-import six.moves
 
 
 def check(pkgs):
     """Check if packages exist for Raspbian."""
     packages = defaultdict(int)
     required_pkgs = "required_pkgs.txt"
-    url = "http://debian.uchicago.edu/debian/dists/buster/main/binary-amd64/Packages.gz"
+    url = "https://debian.osuosl.org/debian/dists/buster/main/binary-amd64/Packages.gz"
 
     url_data = urlparse(url)
     if not url_data.scheme.startswith("file"):
