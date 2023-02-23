@@ -22,7 +22,7 @@ def tickets(tickets_file):
             work_details = "%s - %s - %s" % (request, date, summary)
             items[assignee].append(work_details)
 
-    for (key, values) in list(items.items()):
+    for key, values in list(items.items()):
         six.print_(key, "-", len(values), "request(s)")
         for item in values:
             six.print_(item)
