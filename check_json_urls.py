@@ -14,7 +14,7 @@ def check_urls():
         for url in infile:
             url = url.rstrip(os.linesep)
             try:
-                data = requests.get(url)
+                data = requests.get(url, timeout=10)
                 six.print_(data.json())
             except ValueError as msg:
                 six.print_(("FAIL:", url, data.status_code, msg))

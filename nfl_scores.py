@@ -16,7 +16,7 @@ def nfl_scores():
     """Get the current NFL scores"""
 
     url = "http://www.nfl.com/liveupdate/scores/scores.json"
-    response = requests.get(url)
+    response = requests.get(url, timeout=10)
     try:
         data = response.json()
     except simplejson.errors.JSONDecodeError as error:

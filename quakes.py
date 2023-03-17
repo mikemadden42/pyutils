@@ -10,7 +10,7 @@ import six
 def quakes():
     """Print recent quakes."""
     url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson"
-    req = requests.get(url)
+    req = requests.get(url, timeout=10)
     data = req.json()
     for feature in data["features"]:
         date = time.strftime(

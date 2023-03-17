@@ -23,7 +23,7 @@ def get(url):
     """Get the status of a given url."""
 
     try:
-        return requests.get(url)
+        return requests.get(url, timeout=10)
     except requests.ConnectionError as error:
         six.print_(url, error)
 
