@@ -14,7 +14,7 @@ def main():
     """Demo for random number generator."""
     # Print out 8 random numbers.
     gen = rand_int()
-    for i in range(8):
+    for _i in range(8):
         print(next(gen))
 
     # Print out random numbers forever.
