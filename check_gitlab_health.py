@@ -18,9 +18,9 @@ def check_shell(logfile):
     six.print_("ERRORS IN %s:" % logfile)
     with open(logfile) as infile:
         for line in infile:
-            line = line.rstrip(os.linesep)
-            if line.startswith("W, "):
-                warning = line.split("WARN -- : ")[1]
+            new_line = line.rstrip(os.linesep)
+            if new_line.startswith("W, "):
+                warning = new_line.split("WARN -- : ")[1]
                 warnings[warning] += 1
 
     for key, val in list(warnings.items()):

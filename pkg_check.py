@@ -27,16 +27,16 @@ def check(pkgs):
 
     with gzip.open(pkgs, "rt") as pkgfile:
         for line in pkgfile:
-            line = line.rstrip(os.linesep)
-            if line.startswith("Package"):
-                pkg = line.split(": ")[1]
+            new_line = line.rstrip(os.linesep)
+            if new_line.startswith("Package"):
+                pkg = new_line.split(": ")[1]
                 packages[pkg] += 1
 
     with open(required_pkgs, "rt") as required:
         for line in required:
-            line = line.rstrip(os.linesep)
-            if line not in packages:
-                six.print_(line)
+            new_line = line.rstrip(os.linesep)
+            if new_line not in packages:
+                six.print_(new_line)
 
 
 if __name__ == "__main__":

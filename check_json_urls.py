@@ -12,12 +12,12 @@ def check_urls():
 
     with open("json_urls.txt", "r") as infile:
         for url in infile:
-            url = url.rstrip(os.linesep)
+            new_url = url.rstrip(os.linesep)
             try:
-                data = requests.get(url, timeout=10)
+                data = requests.get(new_url, timeout=10)
                 six.print_(data.json())
             except ValueError as msg:
-                six.print_(("FAIL:", url, data.status_code, msg))
+                six.print_(("FAIL:", new_url, data.status_code, msg))
 
 
 if __name__ == "__main__":

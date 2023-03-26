@@ -22,8 +22,8 @@ def visitors():
     try:
         with open("access.log", "r") as log:
             for line in log:
-                line = line.rstrip(os.linesep)
-                stats = line.split("^")
+                new_line = line.rstrip(os.linesep)
+                stats = new_line.split("^")
                 IPS[stats[3]] = IPS.setdefault(stats[3], 0) + 1
                 URLS[stats[8]] = URLS.setdefault(stats[8], 0) + 1
                 AGENTS[stats[9]] = AGENTS.setdefault(stats[9], 0) + 1
