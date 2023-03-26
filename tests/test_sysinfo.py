@@ -12,4 +12,5 @@ def test_cores():
 def test_memory():
     # Ensure there is at least 512 MB.
     result = sysinfo.get_memory()
-    assert result >= 536870912
+    MIN_RAM = 536870912
+    assert result >= MIN_RAM
