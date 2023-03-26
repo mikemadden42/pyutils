@@ -49,3 +49,7 @@ select = [
     # Pylint
     "PL"
 ]
+ignore = [
+    # tests use assert
+    "S101"
+]
