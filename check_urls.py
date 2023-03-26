@@ -30,7 +30,7 @@ def get(url):
 
 def check():
     """Get the status of a set of urls."""
-    SUCCESS=200
+    SUCCESS = 200
 
     infile = open("urls.txt", "r")
     urls = [x.strip() for x in infile.readlines()]

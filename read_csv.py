@@ -6,7 +6,7 @@ from rich import print
 
 
 def read_csv(filename):
-    MIN_LENGTH=12
+    MIN_LENGTH = 12
     with open(filename, mode="r") as csv_file:
         csv_reader = csv.DictReader(csv_file)
         line_count = 0

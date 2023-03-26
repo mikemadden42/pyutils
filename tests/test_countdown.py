@@ -9,7 +9,7 @@ def test_birthdays():
     start = datetime.date(2011, 11, 30)
     end = datetime.date(2013, 11, 8)
     result = countdown.diff_dates(start, end)
-    EXPECTED_VALUE=709
+    EXPECTED_VALUE = 709
     assert result == EXPECTED_VALUE
 
 
