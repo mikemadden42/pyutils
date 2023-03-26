@@ -27,12 +27,12 @@ def db_info(db_file):
             result = cur.execute(
                 "SELECT name FROM sqlite_master WHERE type='table';"
             ).fetchall()
-            table_names = sorted(list(zip(*result))[0])
+            table_names = sorted(list(zip(*result, strict=True))[0])
             print("\ntables are:" + newline_indent + newline_indent.join(table_names))
 
             for table_name in table_names:
                 result = cur.execute("PRAGMA table_info('%s')" % table_name).fetchall()
-                column_names = list(zip(*result))[1]
+                column_names = list(zip(*result, strict=True))[1]
                 print(
                     ("\ncolumn names for %s:" % table_name)
                     + newline_indent
