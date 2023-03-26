@@ -24,6 +24,7 @@ def mail_alert(percent):
 
 def check_swap():
     """Check swap usage."""
+    THRESHOLD = 0.20
     try:
         with open("/proc/swaps") as infile:
             next(infile)
@@ -32,7 +33,7 @@ def check_swap():
                 size = stats[2]
                 used = stats[3]
                 percent_used = float(used) / float(size)
-                if percent_used > 0.20:
+                if percent_used > THRESHOLD:
                     mail_alert(percent_used)
     except IOError:
         print("File", "/proc/swaps", "not found")
