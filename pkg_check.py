@@ -25,8 +25,8 @@ def check(pkgs):
         print(f"Invalid URL: {url}")
         sys.exit(1)
 
-    with gzip.open(pkgs, "rt") as pkgfile:
-        for line in pkgfile:
+    with gzip.open(pkgs, "rt") as pkg_file:
+        for line in pkg_file:
             new_line = line.rstrip(os.linesep)
             if new_line.startswith("Package"):
                 pkg = new_line.split(": ")[1]
