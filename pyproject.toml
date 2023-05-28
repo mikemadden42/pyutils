@@ -21,11 +21,11 @@ simplejson = "^3.17.6"
 six = "^1.16.0"
 slacker = "^0.14.0"
 urllib3 = "^1.26.9"
-black = "^22.3.0"
-flake8 = "^4.0.1"
+black = "^23.3.0"
+flake8 = "^6.0.0"
 pylint = "^2.13.4"
-pandas = "^1.4.1"
-rich = "^12.3.0"
+pandas = "^2.0.1"
+rich = "^13.3.5"
 
 [tool.poetry.dev-dependencies]
 
