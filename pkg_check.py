@@ -19,7 +19,7 @@ def check(pkgs):
     url_data = urlparse(url)
     if not url_data.scheme.startswith("file"):
         if not os.path.exists(pkgs):
-            six.print_("Downloading package list...")
+            six.print_("Downloading package list...", flush=True)
             six.moves.urllib.request.urlretrieve(url, pkgs)
     else:
         print(f"Invalid URL: {url}")
@@ -36,7 +36,7 @@ def check(pkgs):
         for line in required:
             new_line = line.rstrip(os.linesep)
             if new_line not in packages:
-                six.print_(new_line)
+                six.print_(new_line, flush=True)
 
 
 if __name__ == "__main__":

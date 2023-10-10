@@ -15,7 +15,7 @@ def main():
     try:
         address = psutil.net_if_addrs()["en0"][0].address
     except KeyError as error:
-        six.print_("Unable to find network interface", error)
+        six.print_("Unable to find network interface", error, flush=True)
         sys.exit(1)
     date = str(datetime.datetime.now())
     host = platform.node()
@@ -32,7 +32,7 @@ def main():
     try:
         cursor.execute(sql_create)
     except sqlite3.OperationalError as ex:
-        six.print_(ex)
+        six.print_(ex, flush=True)
 
     cursor.execute(sql_insert)
 
