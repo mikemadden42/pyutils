@@ -3,12 +3,16 @@
 
 import os
 
+import psutil
 import six
 
 
 def load_info():
     """Check disks."""
-    six.print_(os.getloadavg())
+    try:
+        six.print_(psutil.getloadavg())
+    except AttributeError as e:
+        print(e)
 
 
 if __name__ == "__main__":

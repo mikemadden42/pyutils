@@ -75,11 +75,14 @@ def memory():
 def disks():
     """Get the amount of disk space"""
     parts = psutil.disk_partitions()
-    for part in parts:
-        six.print_(
-            "Mount: %s %f%% full"
-            % (part.mountpoint, psutil.disk_usage(part.mountpoint).percent)
-        )
+    try:
+        for part in parts:
+            six.print_(
+                "Mount: %s %f%% full"
+                % (part.mountpoint, psutil.disk_usage(part.mountpoint).percent)
+            )
+    except OSError as e:
+        print(e)
 
 
 if __name__ == "__main__":
