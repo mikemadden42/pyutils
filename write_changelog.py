@@ -78,27 +78,27 @@ def gen_changelog2():
     changelog["pr-1"]["meta"]["author"] = "mikemadden42"
     changelog["pr-1"]["meta"]["description"] = "hello python"
     changelog["pr-1"]["meta"]["hash"] = "472ab8cb35800f5a228bdb55ef6c792ced3d6e6b"
-    changelog["pr-1"]["meta"][
-        "url"
-    ] = "https://github.com/mikemadden42/hello-changelog/pull/1"
+    changelog["pr-1"]["meta"]["url"] = (
+        "https://github.com/mikemadden42/hello-changelog/pull/1"
+    )
     changelog["pr-1"]["changelog"] = "break(packetbeat): add java example"
     changelog["pr-1"]["meta"]["tags"] = ["release-highlights", "breaking-change"]
 
     changelog["pr-2"]["meta"]["author"] = "mikemadden42"
     changelog["pr-2"]["meta"]["description"] = "hello rust"
     changelog["pr-2"]["meta"]["hash"] = "42e46bdcbd95fc187fe29b0be4e9bf6403a638c6"
-    changelog["pr-2"]["meta"][
-        "url"
-    ] = "https://github.com/mikemadden42/hello-changelog/pull/2"
+    changelog["pr-2"]["meta"]["url"] = (
+        "https://github.com/mikemadden42/hello-changelog/pull/2"
+    )
     changelog["pr-2"]["changelog"] = "break(packetbeat): add java example"
     changelog["pr-2"]["meta"]["tags"] = ["breaking-change"]
 
     changelog["pr-3"]["meta"]["author"] = "mikemadden42"
     changelog["pr-3"]["meta"]["description"] = "hello go"
     changelog["pr-3"]["meta"]["hash"] = "04fcab4a7e9ccfa98ea3e7ee33c192caa5731ae0"
-    changelog["pr-3"]["meta"][
-        "url"
-    ] = "https://github.com/mikemadden42/hello-changelog/pull/3"
+    changelog["pr-3"]["meta"]["url"] = (
+        "https://github.com/mikemadden42/hello-changelog/pull/3"
+    )
     changelog["pr-3"]["changelog"] = LiteralUnicode(
         "break(packetbeat): add java example\nfix(functionbeat, journalbeat):hello java"
     )

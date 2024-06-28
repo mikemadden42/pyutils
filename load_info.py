@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Check load."""
 
-
 import psutil
 import six
 

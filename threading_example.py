@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Threading example. """
+"""Threading example."""
 
 import concurrent.futures
 import logging
