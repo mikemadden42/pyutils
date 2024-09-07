@@ -10,7 +10,7 @@ def test_mst():
 
 def test_wustl():
     result = lookup.find("www.wustl.edu")
-    assert result == ("www.wustl.edu", "128.252.160.5")
+    assert result == ("www.wustl.edu", "23.185.0.3")
 
 
 def test_umsl():
