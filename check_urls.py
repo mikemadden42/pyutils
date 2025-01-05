@@ -30,7 +30,7 @@ def get(url):
 
 def check():
     """Get the status of a set of urls."""
-    SUCCESS = 200
+    success = 200
 
     infile = open("urls.txt", "r")
     urls = [x.strip() for x in infile.readlines()]
@@ -40,7 +40,7 @@ def check():
 
     for result in results:
         if result is not None:
-            if result.status_code != SUCCESS:
+            if result.status_code != success:
                 six.print_("Invalid status code", result.url)
             if not result.content:
                 six.print_("Invalid content length", result.url)

@@ -6,7 +6,7 @@ from rich import print
 
 
 def read_csv(filename):
-    MIN_LENGTH = 12
+    min_length = 12
     with open(filename, mode="r") as csv_file:
         csv_reader = csv.DictReader(csv_file)
         line_count = 0
@@ -16,7 +16,7 @@ def read_csv(filename):
             print(f'Title: {row["Title"]}')
             print(f'URL: {row["URL"]}')
             print(f'Username: {row["Username"]}')
-            if len(row["Password"]) < MIN_LENGTH:
+            if len(row["Password"]) < min_length:
                 print(f'Password: [bold red]{row["Password"]}[/bold red]')
             else:
                 print(f'Password: {row["Password"]}')
