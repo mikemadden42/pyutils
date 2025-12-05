@@ -15,7 +15,7 @@ def timeit(method):
         start_time = time.time()
         result = method(*args, **kwargs)
         end_time = time.time()
-        print(f"{method.__name__} => {(end_time-start_time)*1000} ms")
+        print(f"{method.__name__} => {(end_time - start_time) * 1000} ms")
 
         return result
 
